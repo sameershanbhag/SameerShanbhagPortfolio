@@ -27,7 +27,7 @@ class Projects extends Component {
             <div className="projects-heading-div">
               <div className="projects-heading-img-div">
                 {/* <img
-											src={require(`../../assests/images/${projectsHeader["avatar_image_path"]}`)}
+											src={new URL(`../../assests/images/${projectsHeader["avatar_image_path"]}`, import.meta.url).href}
 											alt=""
 										/> */}
                 <ProjectsImg theme={theme} />

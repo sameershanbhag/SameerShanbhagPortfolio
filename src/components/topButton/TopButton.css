@@ -8,4 +8,5 @@
   outline: none;
   border-radius: 2rem;
   font-size: 1.5rem;
+  transition: color 0.2s ease, background-color 0.2s ease;
 }

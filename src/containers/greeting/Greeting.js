@@ -47,7 +47,7 @@ export default function Greeting(props) {
           <div className="greeting-image-div">
             {/* <img
 							alt="saad sitting on table"
-							src={require("../../assests/images/feelingProud.svg")}
+							src={new URL("../../assests/images/feelingProud.svg", import.meta.url).href}
 						></img> */}
             <FeelingProud theme={theme} />
           </div>

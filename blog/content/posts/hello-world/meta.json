@@ -1,0 +1,7 @@
+{
+  "title": "Hello, world — this blog is HTML all the way down",
+  "description": "Why I store posts as plain HTML in git, and how a small design engine turns any markup into a page that matches my portfolio.",
+  "date": "2026-07-06",
+  "tags": ["meta", "engineering"],
+  "draft": false
+}

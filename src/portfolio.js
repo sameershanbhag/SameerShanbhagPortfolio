@@ -481,7 +481,7 @@ const contactPageData = {
     title: "Blogs",
     subtitle:
       "Join me on an exciting journey to unravel the intricacies of software development in an ever-evolving industry—let's connect and explore the limitless possibilities together!",
-    link: "https://blogs.sameershanbhag.com/",
+    link: "https://blog.sameershanbhag.com",
     avatar_image_path: "blogs_image.svg",
   },
   addressSection: {

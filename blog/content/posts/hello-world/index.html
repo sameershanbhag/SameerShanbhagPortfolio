@@ -1,0 +1,38 @@
+<p>Welcome to the blog. Every post here is a plain <code>index.html</code> fragment plus a tiny <code>meta.json</code>, committed to git. No database, no CMS, no markdown pipeline quietly mangling my markup.</p>
+
+<h2>Why HTML instead of markdown?</h2>
+<p>Markdown is great until it isn't. Tables with merged cells, callouts, embedded video, custom figures — you end up escaping into raw HTML anyway. So this blog skips the middleman: posts <em>are</em> HTML, and a small design engine makes them look right.</p>
+
+<blockquote>
+  <p>Write whatever markup the post needs. The design engine makes it match the site.</p>
+</blockquote>
+
+<h2>How the design engine works</h2>
+<ol>
+  <li>At build time, each post's HTML is <strong>sanitized</strong> — scripts, inline styles, and foreign classes are stripped.</li>
+  <li>The clean markup renders inside a themed reading shell where every element — headings, links, lists, quotes, code, tables, images — is styled to match the portfolio's purple palette.</li>
+  <li>The whole site exports to static files and deploys from a git push.</li>
+</ol>
+
+<h3>Code looks like this</h3>
+<pre><code class="language-python">def design_engine(html: str) -> str:
+    """Any HTML in, on-brand page out."""
+    clean = sanitize(html)          # strip scripts + inline styles
+    return render(clean, theme="purple")
+</code></pre>
+
+<h3>Tables work too</h3>
+<table>
+  <thead>
+    <tr><th>Approach</th><th>Storage</th><th>Fidelity</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Markdown</td><td>git</td><td>Lossy for rich layouts</td></tr>
+    <tr><td>CMS + database</td><td>hosted DB</td><td>High, but heavy</td></tr>
+    <tr><td>HTML in git</td><td>git</td><td>Exactly what I wrote</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
+<p>That's the whole system. Posts land here first — subscribe via <a href="/feed.xml">RSS</a> if that's your thing, or find me on <a href="https://sameershanbhag.com">sameershanbhag.com</a>.</p>

@@ -17,7 +17,7 @@ class DegreeCard extends Component {
                   maxHeight: "100%",
                   transform: "scale(0.9)",
                 }}
-                src={require(`../../assests/images/${degree.logo_path}`)}
+                src={new URL(`../../assests/images/${degree.logo_path}`, import.meta.url).href}
                 alt={degree.alt_name}
               />
             </div>
