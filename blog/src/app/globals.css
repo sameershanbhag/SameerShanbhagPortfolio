@@ -91,6 +91,17 @@ body {
   padding: 20px 10px;
   margin: 0 auto;
   animation: pf-fade-top 1s ease both;
+  /* The portfolio's body sets 19px type above 1380px and normal line-height;
+     mirror it here so both headers are pixel-identical at every width. */
+  font-size: 19px;
+  line-height: 23px;
+}
+
+@media (max-width: 1380px) {
+  .pf-header {
+    font-size: 16px;
+    line-height: normal;
+  }
 }
 
 .pf-header ul {
@@ -100,14 +111,13 @@ body {
   overflow: hidden;
 }
 
+/* Hover is the original instant, square-edged highlight — no radius/fade. */
 .pf-header li a {
   display: block;
   padding: 20px 20px;
   color: var(--color-ink);
   text-decoration: none;
   cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .pf-header li a:hover {

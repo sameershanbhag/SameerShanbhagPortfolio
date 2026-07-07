@@ -18,13 +18,12 @@
   color: #868e96;
 }
 
+/* Hover is the original instant, square-edged highlight — no radius/fade. */
 .header li a {
   display: block;
   padding: 20px 20px;
   text-decoration: none;
   cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .header li a:hover {
