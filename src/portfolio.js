@@ -389,8 +389,9 @@ const experience = {
           duration: "March 2024 - Present",
           location: "Sunnyvale, California (Bay Area)",
           points: [
-            "Engineering Marty, one of Walmart's largest AI agents — among the first teams to take its complete agentic architecture from concept to execution. Orchestrated agentic workflows across multiple sub-agents using LangGraph, LangChain, checkpointers, and the LangGraph SDK, with Python, Redis, and Postgres, and a Component Registry for serving UI components as agent output.",
-            "Built billing systems for Walmart Connect, Walmart's advertising business, with Java, Google BigQuery, Google Pub/Sub, and Kubernetes on cloud infrastructure, using PostgreSQL for data storage.",
+            "Architected Marty, one of Walmart's largest AI agents, as part of the first team to take its complete agentic architecture from concept to production. Orchestrated multi-agent workflows across specialized sub-agents using LangGraph, LangChain, checkpointers, and the LangGraph SDK, built on Python, Redis, and PostgreSQL.",
+            "Designed a Component Registry serving rich UI components as structured agent output, enabling sub-agents to render interactive experiences directly in the product instead of plain-text responses.",
+            "Engineered billing systems for Walmart Connect, Walmart's advertising business, using Java, Google BigQuery, Google Pub/Sub, and Kubernetes on cloud infrastructure with PostgreSQL for data storage, ensuring accurate, reliable processing of high-volume advertising transactions.",
           ],
           color: "#0071ce",
         },
@@ -446,8 +447,9 @@ const experience = {
           duration: "March 2024 - Present",
           location: "Sunnyvale, California (Bay Area)",
           points: [
-            "Engineering Marty, one of Walmart's largest AI agents — among the first teams to take its complete agentic architecture from concept to execution. Orchestrated agentic workflows across multiple sub-agents using LangGraph, LangChain, checkpointers, and the LangGraph SDK, with Python, Redis, and Postgres, and a Component Registry for serving UI components as agent output.",
-            "Built billing systems for Walmart Connect, Walmart's advertising business, with Java, Google BigQuery, Google Pub/Sub, and Kubernetes on cloud infrastructure, using PostgreSQL for data storage.",
+            "Architected Marty, one of Walmart's largest AI agents, as part of the first team to take its complete agentic architecture from concept to production. Orchestrated multi-agent workflows across specialized sub-agents using LangGraph, LangChain, checkpointers, and the LangGraph SDK, built on Python, Redis, and PostgreSQL.",
+            "Designed a Component Registry serving rich UI components as structured agent output, enabling sub-agents to render interactive experiences directly in the product instead of plain-text responses.",
+            "Engineered billing systems for Walmart Connect, Walmart's advertising business, using Java, Google BigQuery, Google Pub/Sub, and Kubernetes on cloud infrastructure with PostgreSQL for data storage, ensuring accurate, reliable processing of high-volume advertising transactions.",
           ],
           color: "#0071ce",
         },
