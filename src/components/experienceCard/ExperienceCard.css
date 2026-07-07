@@ -90,7 +90,6 @@
 .experience-card {
   min-width: 350px;
   /* height: 170px; */
-  margin-bottom: 20px;
   border-radius:10px;
   display: flex;
   flex-direction:column;
@@ -104,7 +103,7 @@
 .arrow-left {
   width: 0;
   height: 0;
-  margin-top: 40px;
+  align-self: center;
   margin-left: 10px;
   margin-right: -10px;
   border-top: 10px solid transparent;
@@ -114,16 +113,16 @@
 
 .experience-card-logo-div {
   margin: 10px;
-  margin-top: -10px;
+  display: flex;
+  align-items: center;
 }
 
 .experience-card-stepper {
   display: flex;
   flex-direction:row;
   position: relative;
-  align-items: center; 
-  flex-direction: column; 
-  margin-top: -40px
+  align-items: center;
+  flex-direction: column;
 }
 
 .experience-card-body-div {
