@@ -2,7 +2,7 @@ import { getAllPosts } from "@/lib/posts";
 
 export const dynamic = "force-static";
 
-const SITE = "https://blog.sameershanbhag.com";
+const SITE = "https://sameershanbhag.com/blogs";
 
 function escapeXml(value: string): string {
   return value

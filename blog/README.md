@@ -1,4 +1,4 @@
-# blog.sameershanbhag.com
+# sameershanbhag.com/blogs
 
 Static, database-free blog. Posts are plain **HTML fragments stored in git**; a
 small design engine sanitizes each post and renders it inside a themed reading
@@ -47,5 +47,5 @@ npm run build         # static export to out/
 ## Deploy
 
 Pushing to `master` triggers `.github/workflows/deploy-blog.yml`, which builds
-this folder and publishes `out/` to GitHub Pages under the custom domain
-`blog.sameershanbhag.com` (CNAME is in `public/`).
+this folder and publishes `out/` into the `blogs/` folder of the
+`sameershanbhag.github.io` repo, which serves it at sameershanbhag.com/blogs.

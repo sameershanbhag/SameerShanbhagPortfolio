@@ -21,14 +21,14 @@ const agustina = localFont({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://blog.sameershanbhag.com"),
+  metadataBase: new URL("https://sameershanbhag.com/blogs/"),
   title: {
     default: "Sameer Shanbhag — Blog",
     template: "%s — Sameer Shanbhag",
   },
   description:
     "Writing on software engineering, AI, and whatever else I'm building.",
-  alternates: { types: { "application/rss+xml": "/feed.xml" } },
+  alternates: { types: { "application/rss+xml": "/blogs/feed.xml" } },
 };
 
 export default function RootLayout({

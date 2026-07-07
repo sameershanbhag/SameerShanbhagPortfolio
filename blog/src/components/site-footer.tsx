@@ -9,7 +9,7 @@ export default function SiteFooter() {
         aria-label="Footer"
         className="mt-3 flex items-center justify-center gap-5 text-sm text-muted"
       >
-        <a href="/feed.xml" className="transition-colors duration-200 hover:text-accent">
+        <a href="/blogs/feed.xml" className="transition-colors duration-200 hover:text-accent">
           RSS
         </a>
         <a

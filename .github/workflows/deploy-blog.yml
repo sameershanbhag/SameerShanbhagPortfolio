@@ -1,4 +1,4 @@
-name: Deploy blog to GitHub Pages
+name: Deploy blog to sameershanbhag.com/blogs
 
 on:
   push:
@@ -10,19 +10,14 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
-  group: pages
+  group: blog-deploy
   cancel-in-progress: false
 
 jobs:
-  build:
+  build-and-deploy:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: blog
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -31,18 +26,17 @@ jobs:
           cache: npm
           cache-dependency-path: blog/package-lock.json
       - run: npm ci
+        working-directory: blog
       - run: npm run build
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+        working-directory: blog
+      # Publish the static export into the blogs/ folder of the repo that
+      # serves the apex domain. destination_dir scopes the deploy so the
+      # portfolio at the repo root is left untouched.
+      - uses: peaceiris/actions-gh-pages@v4
         with:
-          path: blog/out
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+          external_repository: sameershanbhag/sameershanbhag.github.io
+          publish_branch: master
+          publish_dir: blog/out
+          destination_dir: blogs
+          commit_message: "blog: deploy ${{ github.sha }}"
