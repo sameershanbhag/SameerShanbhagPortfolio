@@ -23,24 +23,20 @@ class ExperienceCard extends Component {
           </div>
         </Fade>
         <div className="experience-card-stepper">
+          {index !== 0 && (
+            <div
+              className="stepper-line stepper-line-top"
+              style={{ backgroundColor: `${theme.headerColor}` }}
+            />
+          )}
           <div
-            style={{
-              width: 20,
-              height: 20,
-              backgroundColor: `${theme.headerColor}`,
-              borderRadius: 50,
-              zIndex: 100,
-            }}
+            className="stepper-dot"
+            style={{ backgroundColor: `${theme.headerColor}` }}
           />
           {index !== totalCards - 1 && (
             <div
-              style={{
-                height: 190,
-                width: 2,
-                backgroundColor: `${theme.headerColor}`,
-                position: "absolute",
-                marginTop: 20,
-              }}
+              className="stepper-line stepper-line-bottom"
+              style={{ backgroundColor: `${theme.headerColor}` }}
             />
           )}
         </div>
