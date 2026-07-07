@@ -5,10 +5,17 @@
   text-align: center;
 }
 
+/* Responsive grid: each cell is a Fade wrapper div holding one cert-card.
+   Stretching the wrapper + card to the cell equalizes heights per row. */
 .certs-body-div {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+.certs-body-div > div {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
 }
 
 @media (max-width: 1380px) {
@@ -18,10 +25,6 @@
 }
 
 @media (max-width: 768px) {
-  .certs-body-div {
-    flex-direction: column;
-  }
-
   .certs-header {
     font-size: 30px;
   }
