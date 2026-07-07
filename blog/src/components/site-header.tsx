@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-const PORTFOLIO = "https://sameershanbhag.com/#";
+const PORTFOLIO = "https://sameershanbhag.com";
 
 /**
  * Pixel-faithful port of the portfolio's Header (components/header/Header.js):
