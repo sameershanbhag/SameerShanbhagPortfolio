@@ -382,7 +382,7 @@ const experience = {
       work: true,
       experiences: [
         {
-          title: "Senior Software Engineer",
+          title: "Staff Software Engineer",
           company: "Walmart Global Tech",
           company_url: "https://tech.walmart.com/",
           logo_path: "walmart_logo.png",
@@ -439,7 +439,7 @@ const experience = {
       title: "Internships",
       experiences: [
         {
-          title: "Senior Software Engineer",
+          title: "Staff Software Engineer",
           company: "Walmart Global Tech",
           company_url: "https://tech.walmart.com/",
           logo_path: "walmart_logo.png",
