@@ -1,0 +1,31 @@
+<p>The part that bothered me about every AI coding productivity study I’ve read is that they all measure speed. Time to complete a task. PRs merged per week. Lines shipped. None of them measure whether the code was any good. Nolan Lawson published a post on May 25, 2026, at <a href="https://nolanlawson.com/2026/05/25/using-ai-to-write-better-code-more-slowly/">nolanlawson.com</a> called “Using AI to write better code more slowly,” and the title made that gap feel obvious in a way I hadn’t quite articulated before.</p>
+
+<p>I’ll be upfront: this is a title-reaction piece. The argument felt nearly complete in those eight words, and what I actually want to work through is why the quality side is so hard to instrument.</p>
+
+<h2>What “more slowly” actually means</h2>
+
+<p>“More slowly” is doing almost all the work in that title. The default assumption, built into how AI coding tools are sold and how most of us reach for them, is that more AI means more speed. Autocomplete a function. Generate the boilerplate. Close the PR by end of day.</p>
+
+<p>Lawson’s argument is that you can use the same tools deliberately in the other direction: slow down, use AI to interrogate your own design choices before committing to them, and end up with code that is genuinely better, not just faster to ship. The tools are the same. The mode is different.</p>
+
+<h2>Why quality-first AI use is hard to adopt</h2>
+
+<p>The mechanism that makes this hard even if the argument is right: quality is not instrumentable the way speed is.</p>
+
+<p>Speed benchmarks are easy to run. A team can track tasks per hour, time to merge, commit frequency. If an AI tool moves any of those numbers, you can put it in a slide next quarter.</p>
+
+<p>Code quality doesn’t work that way. What would a benchmark even look like for “the abstraction was chosen deliberately rather than defaulted to”? Or “a new engineer can understand this module without a pairing session”? Those outcomes surface 12 to 18 months later. In an on-call incident where the blast radius of a bug turns out to be smaller than it would have been. In a code review where nobody asks why the design looks this way. In a new hire who ramps in three weeks instead of six.</p>
+
+<p>None of that appears in a velocity dashboard. You can’t close a sprint with “we wrote code that will still make sense in 2028.”</p>
+
+<p>This is probably the whole reason “AI makes you faster” got the marketing. Speed closes a procurement conversation. “Our tool will improve code quality over the long term by slowing you down on the first pass” does not survive a buying committee, even if it’s true.</p>
+
+<h2>What I’d still want to look at</h2>
+
+<p>The benchmark I keep looking for doesn’t seem to exist yet: a team that deliberately used AI to interrogate design decisions rather than just generate code, then tracked lagging quality indicators over a year. Not throughput. On-call burden. Code review duration. New hire ramp time. Share of PRs that needed structural rework versus cosmetic cleanup.</p>
+
+<p>Running that experiment would be hard. The confounders pile up: teams change, codebases evolve, the model improves while you’re measuring it. But that data would be more meaningful than any lines-per-day number I’ve seen cited.</p>
+
+<p>If I had to explain this in an interview, I think I’d say: AI tools have demonstrated they can move throughput metrics. The quality effects are a separate question that almost no team has actually instrumented. Knowing that gap exists feels important before drawing conclusions about what these tools are doing to codebases over the long run.</p>
+
+<p>Source: <a href="https://nolanlawson.com/2026/05/25/using-ai-to-write-better-code-more-slowly/">https://nolanlawson.com/2026/05/25/using-ai-to-write-better-code-more-slowly/</a></p>

@@ -1,0 +1,11 @@
+{
+  "title": "DeepSeek Reasonix and the Economics of the Agent Prompt Loop",
+  "description": "Why 'native' KV-cache design in a coding agent makes context ordering a first-class engineering constraint, not an afterthought.",
+  "date": "2026-05-25",
+  "tags": [
+    "ai",
+    "agents",
+    "llm-economics"
+  ],
+  "draft": false
+}

@@ -1,0 +1,11 @@
+{
+  "title": "DeepSeek V4: How They Crushed the Million-Token Memory Problem",
+  "description": "A million-token context window sounds impressive. Making it cheap enough to actually use is the hard part — and the engineering behind it is worth understanding properly.",
+  "date": "2026-05-29",
+  "tags": [
+    "ai",
+    "deepseek",
+    "architecture"
+  ],
+  "draft": false
+}
