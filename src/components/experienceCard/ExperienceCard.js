@@ -17,6 +17,7 @@ class ExperienceCard extends Component {
           <div className="experience-card-logo-div">
             <img
               className="experience-card-logo"
+              style={{ border: `3px solid ${experience["color"]}` }}
               src={new URL(`../../assests/images/${experience["logo_path"]}`, import.meta.url).href}
               alt=""
             />
@@ -31,7 +32,7 @@ class ExperienceCard extends Component {
           )}
           <div
             className="stepper-dot"
-            style={{ backgroundColor: `${theme.headerColor}` }}
+            style={{ backgroundColor: `${experience["color"]}` }}
           />
           {index !== totalCards - 1 && (
             <div
@@ -48,7 +49,10 @@ class ExperienceCard extends Component {
             ></div>
             <div
               className="experience-card"
-              style={{ background: `${theme.body}` }}
+              style={{
+                background: `linear-gradient(180deg, ${experience["color"]}14 0%, ${theme.body} 110px)`,
+                borderTop: `4px solid ${experience["color"]}`,
+              }}
             >
               <div
                 style={{
@@ -68,7 +72,7 @@ class ExperienceCard extends Component {
                               style={{
                                 backgroundColor:
                                   roleIndex === 0
-                                    ? theme.imageHighlight
+                                    ? experience["color"]
                                     : theme.headerColor,
                               }}
                             />
@@ -112,6 +116,7 @@ class ExperienceCard extends Component {
                       href={experience["company_url"]}
                       target="_blank"
                       rel="noopener noreferrer"
+                      style={{ color: `${experience["color"]}` }}
                     >
                       {experience["company"]}
                     </a>
