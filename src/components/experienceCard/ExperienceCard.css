@@ -341,3 +341,60 @@ transition: all 0.3s ease-in-out 0s;
       text-align: justify;
   }
 }
+
+/* In-card promotion timeline: one company card, multiple roles. */
+.experience-role-track {
+  display: flex;
+  flex-direction: column;
+}
+
+.experience-role-row {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  text-align: left;
+}
+
+.experience-role-marker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 22px;
+  padding-top: 16px;
+}
+
+.experience-role-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.experience-role-line {
+  width: 2px;
+  flex: 1;
+  margin-top: 2px;
+  margin-bottom: -16px;
+}
+
+.experience-role-duration {
+  font-family: "Google Sans Regular";
+  font-size: 14px;
+  margin: 0 0 6px;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .experience-role-track {
+    align-items: center;
+  }
+  .experience-role-row {
+    text-align: center;
+  }
+  .experience-role-marker {
+    display: none;
+  }
+  .experience-role-duration {
+    text-align: center;
+  }
+}

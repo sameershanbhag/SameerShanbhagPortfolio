@@ -383,27 +383,25 @@ const experience = {
       experiences: [
         {
           title: "Staff Software Engineer",
+          roles: [
+            {
+              title: "Staff Software Engineer",
+              duration: "May 2026 - Present",
+            },
+            {
+              title: "Senior Software Engineer",
+              duration: "March 2024 - May 2026",
+            },
+          ],
           company: "Walmart Global Tech",
           company_url: "https://tech.walmart.com/",
           logo_path: "walmart_logo.png",
-          duration: "May 2026 - Present · promoted from Senior",
+          duration: "March 2024 - Present",
           location: "Sunnyvale, California (Bay Area)",
           points: [
             "Architected Marty, one of Walmart's largest AI agents, as part of the first team to take its complete agentic architecture from concept to production. Orchestrated multi-agent workflows across specialized sub-agents using LangGraph, LangChain, checkpointers, and the LangGraph SDK, built on Python, Redis, and PostgreSQL.",
             "Designed a Component Registry serving rich UI components as structured agent output, enabling sub-agents to render interactive experiences directly in the product instead of plain-text responses.",
-          ],
-          color: "#0071ce",
-        },
-        {
-          title: "Senior Software Engineer",
-          company: "Walmart Global Tech",
-          company_url: "https://tech.walmart.com/",
-          logo_path: "walmart_logo.png",
-          duration: "March 2024 - May 2026",
-          location: "Sunnyvale, California (Bay Area)",
-          points: [
             "Engineered billing systems for Walmart Connect, Walmart's advertising business, using Java, Google BigQuery, Google Pub/Sub, and Kubernetes on cloud infrastructure with PostgreSQL for data storage, ensuring accurate, reliable processing of high-volume advertising transactions.",
-            "Transitioned to Walmart's agentic AI initiative as a founding engineer on Marty, laying the groundwork for the multi-agent orchestration platform that shipped to production — work recognized with a promotion to Staff Software Engineer.",
           ],
           color: "#0071ce",
         },
@@ -453,27 +451,25 @@ const experience = {
       experiences: [
         {
           title: "Staff Software Engineer",
+          roles: [
+            {
+              title: "Staff Software Engineer",
+              duration: "May 2026 - Present",
+            },
+            {
+              title: "Senior Software Engineer",
+              duration: "March 2024 - May 2026",
+            },
+          ],
           company: "Walmart Global Tech",
           company_url: "https://tech.walmart.com/",
           logo_path: "walmart_logo.png",
-          duration: "May 2026 - Present · promoted from Senior",
+          duration: "March 2024 - Present",
           location: "Sunnyvale, California (Bay Area)",
           points: [
             "Architected Marty, one of Walmart's largest AI agents, as part of the first team to take its complete agentic architecture from concept to production. Orchestrated multi-agent workflows across specialized sub-agents using LangGraph, LangChain, checkpointers, and the LangGraph SDK, built on Python, Redis, and PostgreSQL.",
             "Designed a Component Registry serving rich UI components as structured agent output, enabling sub-agents to render interactive experiences directly in the product instead of plain-text responses.",
-          ],
-          color: "#0071ce",
-        },
-        {
-          title: "Senior Software Engineer",
-          company: "Walmart Global Tech",
-          company_url: "https://tech.walmart.com/",
-          logo_path: "walmart_logo.png",
-          duration: "March 2024 - May 2026",
-          location: "Sunnyvale, California (Bay Area)",
-          points: [
             "Engineered billing systems for Walmart Connect, Walmart's advertising business, using Java, Google BigQuery, Google Pub/Sub, and Kubernetes on cloud infrastructure with PostgreSQL for data storage, ensuring accurate, reliable processing of high-volume advertising transactions.",
-            "Transitioned to Walmart's agentic AI initiative as a founding engineer on Marty, laying the groundwork for the multi-agent orchestration platform that shipped to production — work recognized with a promotion to Staff Software Engineer.",
           ],
           color: "#0071ce",
         },

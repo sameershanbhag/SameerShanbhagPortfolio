@@ -62,12 +62,52 @@ class ExperienceCard extends Component {
                 }}
               >
                 <div>
-                  <h3
-                    className="experience-card-title"
-                    style={{ color: theme.text }}
-                  >
-                    {experience["title"]}
-                  </h3>
+                  {experience["roles"] ? (
+                    <div className="experience-role-track">
+                      {experience["roles"].map((role, roleIndex) => (
+                        <div className="experience-role-row" key={roleIndex}>
+                          <div className="experience-role-marker">
+                            <span
+                              className="experience-role-dot"
+                              style={{
+                                backgroundColor:
+                                  roleIndex === 0
+                                    ? theme.imageHighlight
+                                    : theme.headerColor,
+                              }}
+                            />
+                            {roleIndex !== experience["roles"].length - 1 && (
+                              <span
+                                className="experience-role-line"
+                                style={{ backgroundColor: theme.headerColor }}
+                              />
+                            )}
+                          </div>
+                          <div>
+                            <h3
+                              className="experience-card-title"
+                              style={{ color: theme.text }}
+                            >
+                              {role["title"]}
+                            </h3>
+                            <p
+                              className="experience-role-duration"
+                              style={{ color: theme.secondaryText }}
+                            >
+                              {role["duration"]}
+                            </p>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <h3
+                      className="experience-card-title"
+                      style={{ color: theme.text }}
+                    >
+                      {experience["title"]}
+                    </h3>
+                  )}
                   <p
                     className="experience-card-company"
                     style={{ color: theme.text }}
