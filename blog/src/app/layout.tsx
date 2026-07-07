@@ -30,6 +30,14 @@ export const metadata: Metadata = {
     "Writing on software engineering, AI, and whatever else I'm building.",
   // Resolved against metadataBase (which already carries the /blogs path).
   alternates: { types: { "application/rss+xml": "/feed.xml" } },
+  icons: {
+    icon: [
+      { url: "/icons/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/icons/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/icons/favicon-96x96.png", sizes: "96x96", type: "image/png" },
+    ],
+    apple: [{ url: "/icons/apple-icon-180x180.png", sizes: "180x180" }],
+  },
 };
 
 export default function RootLayout({
