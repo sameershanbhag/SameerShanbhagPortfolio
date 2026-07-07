@@ -7,9 +7,10 @@ const dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   plugins: [react()],
-  // Relative base so the gh-pages deploy works whether the site is served
-  // from a custom domain root or a repo subpath (routing uses HashRouter).
-  base: "./",
+  // Absolute base: BrowserRouter serves real paths like /contact, where
+  // relative asset URLs would resolve against the wrong directory. The site
+  // always lives at the domain root (sameershanbhag.com).
+  base: "/",
   resolve: {
     alias: {
       // Legacy react-reveal API, backed by a local React-18-safe shim.

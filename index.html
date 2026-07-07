@@ -43,6 +43,29 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/canvasjs/1.7.0/canvasjs.min.js"></script>
 
     <title>Sameer's Portfolio</title>
+
+    <script>
+      // Clean-URL routing on GitHub Pages (spa-github-pages pattern).
+      // 1) Forward legacy hash links: /#/contact -> /contact
+      // 2) Decode the ?/path redirect that 404.html produces for deep links.
+      (function () {
+        var l = window.location;
+        if (l.hash.indexOf("#/") === 0) {
+          l.replace(l.origin + l.hash.slice(1));
+          return;
+        }
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+          window.history.replaceState(null, null, decoded + l.hash);
+        }
+      })();
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
