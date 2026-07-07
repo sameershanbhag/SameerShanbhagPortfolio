@@ -382,6 +382,19 @@ const experience = {
       work: true,
       experiences: [
         {
+          title: "Senior Software Engineer",
+          company: "Walmart Global Tech",
+          company_url: "https://tech.walmart.com/",
+          logo_path: "walmart_logo.png",
+          duration: "March 2024 - Present",
+          location: "Sunnyvale, California (Bay Area)",
+          points: [
+            "Engineering Marty, one of Walmart's largest AI agents — among the first teams to take its complete agentic architecture from concept to execution. Orchestrated agentic workflows across multiple sub-agents using LangGraph, LangChain, checkpointers, and the LangGraph SDK, with Python, Redis, and Postgres, and a Component Registry for serving UI components as agent output.",
+            "Built billing systems for Walmart Connect, Walmart's advertising business, with Java, Google BigQuery, Google Pub/Sub, and Kubernetes on cloud infrastructure, using PostgreSQL for data storage.",
+          ],
+          color: "#0071ce",
+        },
+        {
           title: "Software Engineer",
           company: "Qualcomm Technologies Inc.",
           company_url: "https://qualcomm.com",
@@ -425,6 +438,19 @@ const experience = {
     {
       title: "Internships",
       experiences: [
+        {
+          title: "Senior Software Engineer",
+          company: "Walmart Global Tech",
+          company_url: "https://tech.walmart.com/",
+          logo_path: "walmart_logo.png",
+          duration: "March 2024 - Present",
+          location: "Sunnyvale, California (Bay Area)",
+          points: [
+            "Engineering Marty, one of Walmart's largest AI agents — among the first teams to take its complete agentic architecture from concept to execution. Orchestrated agentic workflows across multiple sub-agents using LangGraph, LangChain, checkpointers, and the LangGraph SDK, with Python, Redis, and Postgres, and a Component Registry for serving UI components as agent output.",
+            "Built billing systems for Walmart Connect, Walmart's advertising business, with Java, Google BigQuery, Google Pub/Sub, and Kubernetes on cloud infrastructure, using PostgreSQL for data storage.",
+          ],
+          color: "#0071ce",
+        },
         {
           title: "Software Engineer",
           company: "Qualcomm Technologies Inc.",
