@@ -28,7 +28,8 @@ export const metadata: Metadata = {
   },
   description:
     "Writing on software engineering, AI, and whatever else I'm building.",
-  alternates: { types: { "application/rss+xml": "/blogs/feed.xml" } },
+  // Resolved against metadataBase (which already carries the /blogs path).
+  alternates: { types: { "application/rss+xml": "/feed.xml" } },
 };
 
 export default function RootLayout({
