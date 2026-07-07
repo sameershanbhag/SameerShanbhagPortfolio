@@ -1,40 +1,46 @@
 import Link from "next/link";
 
-const PORTFOLIO_URL = "https://sameershanbhag.com";
+const PORTFOLIO = "https://sameershanbhag.com/#";
 
+/**
+ * Pixel-faithful port of the portfolio's Header (components/header/Header.js):
+ * same logo mark, nav items, spacing, hover fill and mobile hamburger, so the
+ * blog reads as another page of sameershanbhag.com.
+ */
 export default function SiteHeader() {
   return (
-    <header className="sticky top-0 z-30 bg-bg/85 backdrop-blur border-b border-accent-soft/40">
-      <div className="mx-auto max-w-5xl px-5 h-16 flex items-center justify-between gap-4">
-        <Link
-          href="/"
-          className="flex items-baseline text-xl text-ink transition-colors duration-200 hover:text-accent"
-        >
-          <span>&lt;</span>
-          <span className="font-logo px-1 pt-1">Sameer Shanbhag</span>
-          <span>/&gt;</span>
-        </Link>
-        <nav aria-label="Main" className="flex items-center gap-1 sm:gap-2 text-[15px] font-medium">
-          <Link
-            href="/"
-            className="px-3 py-2 rounded-lg text-ink transition-colors duration-200 hover:bg-highlight hover:text-accent"
-          >
-            Posts
+    <header className="pf-header">
+      <Link href="/" className="pf-logo">
+        <span>&nbsp;&lt;</span>
+        <span className="pf-logo-name">SameerShanbhag</span>
+        <span>/&gt;</span>
+      </Link>
+      <input className="pf-menu-btn" type="checkbox" id="pf-menu-btn" />
+      <label className="pf-menu-icon" htmlFor="pf-menu-btn" aria-label="Toggle menu">
+        <span className="pf-navicon"></span>
+      </label>
+      <ul className="pf-menu">
+        <li>
+          <a href={`${PORTFOLIO}/home`}>Home</a>
+        </li>
+        <li>
+          <a href={`${PORTFOLIO}/education`}>Education</a>
+        </li>
+        <li>
+          <a href={`${PORTFOLIO}/experience`}>Experience</a>
+        </li>
+        <li>
+          <a href={`${PORTFOLIO}/projects`}>Projects</a>
+        </li>
+        <li>
+          <Link href="/" className="pf-active" aria-current="page">
+            Blog
           </Link>
-          <Link
-            href="/tags/"
-            className="px-3 py-2 rounded-lg text-ink transition-colors duration-200 hover:bg-highlight hover:text-accent"
-          >
-            Tags
-          </Link>
-          <a
-            href={PORTFOLIO_URL}
-            className="ml-1 px-4 py-2 rounded-lg bg-accent text-white transition-colors duration-200 hover:bg-ink"
-          >
-            Portfolio
-          </a>
-        </nav>
-      </div>
+        </li>
+        <li>
+          <a href={`${PORTFOLIO}/contact`}>Contact Me</a>
+        </li>
+      </ul>
     </header>
   );
 }

@@ -38,7 +38,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${googleSans.variable} ${agustina.variable} min-h-screen flex flex-col`}>
         <SiteHeader />
-        <main className="flex-1 w-full">{children}</main>
+        <main className="flex-1 w-full pf-fade-up">{children}</main>
         <SiteFooter />
       </body>
     </html>
