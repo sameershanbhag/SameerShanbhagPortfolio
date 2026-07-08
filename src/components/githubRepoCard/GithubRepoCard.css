@@ -34,7 +34,8 @@
 }
 
 .repo-view-link {
-  margin: 0.75rem 0 0;
+  margin: 0;
+  white-space: nowrap;
   opacity: 0;
   transition: opacity 0.2s ease;
 }
@@ -77,8 +78,23 @@
 
 .repo-name-div {
   display: flex;
-  align-items: center;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
   margin-bottom: 0.5rem;
+}
+
+.repo-name-left {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+}
+
+.repo-creation-date {
+  margin: 0;
+  font-size: 14px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .repo-svg {

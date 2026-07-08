@@ -28,17 +28,17 @@ export default function PublicationCard({ pub, theme }) {
             <p className="publication-name" style={{ color: theme.text }}>
               {pub.name}
             </p>
-          </div>
-          <p className="publication-description" style={{ color: theme.text }}>
-            {pub.description}
-          </p>
-          <div className="publication-details">
             <p
               className="publication-creation-date subTitle"
               style={{ color: theme.secondaryText }}
             >
               Published {publishedOn}
             </p>
+          </div>
+          <p className="publication-description" style={{ color: theme.text }}>
+            {pub.description}
+          </p>
+          <div className="publication-details">
             <p className="publication-view-link" style={{ color: accent }}>
               Read the paper →
             </p>

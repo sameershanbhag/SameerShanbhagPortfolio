@@ -27,7 +27,16 @@
 
 .publication-name-div {
   display: flex;
-  align-items: center;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.publication-creation-date {
+  margin: 0;
+  font-size: 14px;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .publication-name {
