@@ -9,7 +9,7 @@ export default function GithubRepoCard({ repo, theme }) {
     win.focus();
   }
 
-  const accent = theme.jacketColor;
+  const accent = repo.color || theme.jacketColor;
   const createdOn = new Date(repo.createdAt).toLocaleDateString("en-US", {
     month: "short",
     year: "numeric",
@@ -19,7 +19,7 @@ export default function GithubRepoCard({ repo, theme }) {
     <div
       className="repo-card-div"
       style={{
-        background: `linear-gradient(180deg, ${theme.headerColor} 0%, ${theme.body} 88px)`,
+        background: `linear-gradient(180deg, ${accent}1f 0%, ${theme.body} 88px)`,
         borderTop: `4px solid ${accent}`,
       }}
     >

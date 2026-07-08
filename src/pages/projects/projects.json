@@ -84,7 +84,7 @@
           "iconifyClass": "simple-icons:vercel"
         }
       ],
-      "color": "#111111"
+      "color": "#231942"
     },
     {
       "id": "langchain-personal-assistant",
@@ -107,7 +107,7 @@
           "iconifyClass": "simple-icons:openai"
         }
       ],
-      "color": "#1C7C54"
+      "color": "#9F86C0"
     },
     {
       "id": "proto-grpc-example",
@@ -122,7 +122,7 @@
           "iconifyClass": "simple-icons:python"
         }
       ],
-      "color": "#4285F4"
+      "color": "#B4628C"
     },
     {
       "id": "java-microservices",
@@ -165,7 +165,7 @@
           "iconifyClass": "simple-icons:mongodb"
         }
       ],
-      "color": "#6DB33F"
+      "color": "#7D5BA6"
     }
   ]
 }
