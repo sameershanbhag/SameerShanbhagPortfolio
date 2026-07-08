@@ -452,14 +452,14 @@ const experience = {
       title: "Internships",
       experiences: [
         {
-          title: "Software Engineer",
+          title: "Software Engineering Intern",
           company: "Qualcomm Technologies Inc.",
           company_url: "https://qualcomm.com",
           logo_path: "q_logo.png",
-          duration: "February 2021 - January 2024",
+          duration: "May 2020 - August 2020",
           location: "Michigan, United States",
           description:
-            "Successfully streamlined the testing process for Audio DSP algorithms by implementing a comprehensive CI/CD architecture, transitioning from Legasy Test System to Latest Test System, and developing a Python analysis script that replaced MATLAB, resulting in a 80% increase in testing efficiency and enabling smoother integration of new analyses by developers.",
+            "Streamlined Audio DSP algorithm testing by building out the team's CI/CD pipeline and writing a Python analysis script that replaced the legacy MATLAB workflow — an 80% boost in testing efficiency that made new analyses far easier for developers to integrate. The internship converted into a full-time engineering role.",
           color: "#3253dc",
         },
       ],
