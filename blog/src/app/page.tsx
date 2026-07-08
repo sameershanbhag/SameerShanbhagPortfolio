@@ -1,8 +1,10 @@
-import { getAllPosts } from "@/lib/posts";
+import { getAllPosts, getAllTags } from "@/lib/posts";
 import PostCard from "@/components/post-card";
+import TagPill from "@/components/tag-pill";
 
 export default function Home() {
   const posts = getAllPosts();
+  const tags = getAllTags().slice(0, 6);
   const [featured, ...rest] = posts;
 
   return (
@@ -15,6 +17,13 @@ export default function Home() {
           Writing on software engineering, AI agents, and whatever else I&apos;m
           building. New posts land here first.
         </p>
+        {tags.length > 0 && (
+          <nav aria-label="Browse by topic" className="mt-6 flex flex-wrap justify-center gap-2">
+            {tags.map(({ tag, count }) => (
+              <TagPill key={tag} tag={tag} count={count} />
+            ))}
+          </nav>
+        )}
       </section>
 
       {posts.length === 0 ? (

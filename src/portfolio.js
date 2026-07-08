@@ -505,7 +505,7 @@ const contactPageData = {
   blogSection: {
     title: "Blogs",
     subtitle:
-      "Join me on an exciting journey to unravel the intricacies of software development in an ever-evolving industry—let's connect and explore the limitless possibilities together!",
+      "I write about AI agents and the engineering behind them — agent economics, orchestration patterns, model architecture deep-dives, and what actually holds up in production. New posts land on my blog first.",
     link: "https://sameershanbhag.com/blogs/",
     avatar_image_path: "blogs_image.svg",
   },
