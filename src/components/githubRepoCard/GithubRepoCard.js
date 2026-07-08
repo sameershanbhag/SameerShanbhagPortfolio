@@ -60,9 +60,14 @@ export default function GithubRepoCard({ repo, theme }) {
               className="repo-languages"
               logos={repo.languages}
             />
-            <p className="repo-view-link" style={{ color: accent }}>
+          </div>
+          <div className="repo-view-row">
+            <span
+              className="repo-view-btn"
+              style={{ borderColor: accent, color: accent }}
+            >
               View on GitHub →
-            </p>
+            </span>
           </div>
 
         </div>

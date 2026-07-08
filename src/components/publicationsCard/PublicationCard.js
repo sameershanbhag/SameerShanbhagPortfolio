@@ -1,5 +1,6 @@
 import React from "react";
 import "./PublicationCard.css";
+import "../githubRepoCard/GithubRepoCard.css";
 import { Fade } from "react-reveal";
 
 export default function PublicationCard({ pub, theme }) {
@@ -39,9 +40,14 @@ export default function PublicationCard({ pub, theme }) {
             {pub.description}
           </p>
           <div className="publication-details">
-            <p className="publication-view-link" style={{ color: accent }}>
+          </div>
+          <div className="repo-view-row">
+            <span
+              className="repo-view-btn"
+              style={{ borderColor: accent, color: accent }}
+            >
               Read the paper →
-            </p>
+            </span>
           </div>
           {/* <div className="repo-stats">
           <div className="repo-left-stat">

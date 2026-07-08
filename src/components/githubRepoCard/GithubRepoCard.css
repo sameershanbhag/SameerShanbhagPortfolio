@@ -33,18 +33,26 @@
   flex: 1;
 }
 
-.repo-view-link {
-  margin: 0;
-  white-space: nowrap;
-  opacity: 0;
-  transition: opacity 0.2s ease;
+.repo-view-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
 }
 
-.repo-card-div:hover .repo-view-link {
-  opacity: 1;
+.repo-view-btn {
+  display: inline-block;
+  padding: 7px 14px;
+  border-radius: 8px;
+  border: 1.5px solid;
   font-family: "Google Sans Medium";
-  font-size: 14px;
-  text-align: left;
+  font-size: 13px;
+  white-space: nowrap;
+  transition: background-color 0.2s ease;
+}
+
+.repo-card-div:hover .repo-view-btn,
+.publication-card-div:hover .repo-view-btn {
+  background-color: rgba(94, 84, 142, 0.1);
 }
 
 .repo-stats {
