@@ -270,9 +270,9 @@ const degrees = {
       alt_name: "Charlotte University",
       duration: "2020 - 2021",
       descriptions: [
-        "⚡ I've taken a variety of courses related to Artificial Intelligence, covering subjects like Graph Machine Learning and Computer Vision, which have piqued my interest",
-        "⚡ In addition, I've had the privilege of serving as a research assistant, contributing to the development of a website for the Integrated Genome Browser, a tool used for visualizing DNA. This research experience broadened my perspective and deepened my appreciation for the complexities of genomics and how to solve the challanges using computer science and technology.",
-        "⚡ During my university journey, I also had the opportunity to intern at Qualcomm, where I applied my academic knowledge to real-world projects. This practical exposure solidified my understanding of Audio DSP concepts and left me with a well-rounded perspective on the field.",
+        "⚡ Specialized in AI — graduate coursework in Graph Machine Learning and Computer Vision that underpins the agent systems I build today.",
+        "⚡ Research assistant on the Integrated Genome Browser, a DNA-visualization tool used by genomics researchers — built its companion website and learned what it takes to ship software for working scientists.",
+        "⚡ Interned at Qualcomm on Audio DSP tooling while completing the degree — the internship that converted into my full-time engineering role there.",
       ],
       website_link: "https://www.uncc.edu/",
       color: "#005035",
@@ -285,9 +285,9 @@ const degrees = {
         "SIES Graduate School of Technology - Navi Mumbai - Maharashtra",
       duration: "2012 - 2016",
       descriptions: [
-        "⚡ I've covered the basics of software engineering with courses in Data Structures, Algorithms, Database Management Systems, Operating Systems, Computer Architecture, and Artificial Intelligence. These subjects provided me with a solid foundation in the field.",
-        "⚡ Additionally, I've explored Python, Data Science, Cloud Computing, and Full Stack Development to gain insights into industry-relevant technologies.",
-        "⚡ During my time as a member of the tech team for the Student Council, I contributed to the development of websites for various college events. This practical experience allowed me to apply my knowledge and learn important teamwork and problem-solving skills.",
+        "⚡ Built the computer-science core — data structures, algorithms, databases, operating systems, computer architecture, and a first pass at AI.",
+        "⚡ Went beyond the syllabus into Python, data science, cloud computing, and full-stack development — the toolkit that carried straight into my first job.",
+        "⚡ Shipped websites for college events on the Student Council tech team — an early lesson in building for real users on real deadlines.",
       ],
       website_link: "http://sies.edu.in",
       color: "#F26E21",
@@ -451,30 +451,6 @@ const experience = {
     {
       title: "Internships",
       experiences: [
-        {
-          title: "Staff Software Engineer",
-          roles: [
-            {
-              title: "Staff Software Engineer",
-              duration: "May 2026 - Present",
-            },
-            {
-              title: "Senior Software Engineer",
-              duration: "March 2024 - May 2026",
-            },
-          ],
-          company: "Walmart Global Tech",
-          company_url: "https://tech.walmart.com/",
-          logo_path: "walmart_logo.png",
-          duration: "March 2024 - Present",
-          location: "Sunnyvale, California (Bay Area)",
-          points: [
-            "Founding engineer on Marty, one of Walmart's largest AI agents — took its multi-agent architecture from concept to production. Built the LangGraph orchestration layer that routes work across specialized sub-agents, with checkpointing over Redis and Postgres so long-running agent workflows survive failures and resume mid-conversation.",
-            "Designed the Component Registry that lets Marty answer with real product UI instead of walls of text: sub-agents emit structured output that the registry resolves into interactive components rendered directly in the app.",
-            "Owned billing services for Walmart Connect, Walmart's advertising business — Java services on Kubernetes that reconcile high-volume ad spend, streaming billing events through Pub/Sub into BigQuery with PostgreSQL as the system of record.",
-          ],
-          color: "#0071ce",
-        },
         {
           title: "Software Engineer",
           company: "Qualcomm Technologies Inc.",
