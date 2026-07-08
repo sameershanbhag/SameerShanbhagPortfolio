@@ -23,7 +23,7 @@ const greeting = {
   logo_name: "SameerShanbhag",
   nickname: "Sam",
   subTitle:
-    "I'm a passionate individual dedicated to crafting end-to-end solutions that foster sustainable and scalable social and technical systems, all with the goal of making a meaningful impact. I thrive on these challenges, driven by the desire to leave a lasting mark through innovative solutions",
+    "I build AI agents and work like a forward deployed engineer — embedded with the problem, shipping end to end. At Walmart Global Tech I was a founding engineer on Marty, one of Walmart's largest AI agents, taking its multi-agent architecture from concept to production. Nights go to PyAutonomy, my local-first autonomous agent, and to my blog, where I write about agent engineering and the economics of LLM systems. A decade across fintech, bioinformatics, and semiconductors taught me how to ship software that lasts — agents are where all of it converges.",
   resumeLink:
     "https://drive.google.com/file/d/1CyDfgsYK4oSOSNHed52jv2szaxwqg6d3/view?usp=sharing",
   portfolio_repository: "https://github.com/sameershanbhag",
@@ -53,6 +53,74 @@ const socialMediaLinks = [
 
 const skills = {
   data: [
+    {
+      title: "AI & Agent Engineering — Forward Deployed",
+      fileName: "DataScienceImg",
+      skills: [
+        "⚡ Building production multi-agent systems — orchestration graphs, sub-agent routing, and checkpointed state so agents survive real-world failures and resume mid-conversation",
+        "⚡ Deep in the LLM toolchain: LangGraph and LangChain, structured output and grammar-constrained tool calling, RAG over vector memory, and the prompt-loop economics of KV-cache-aware context design",
+        "⚡ Shipping agents end to end — from orchestration back-ends to serving rich, interactive UI as agent output instead of walls of text",
+        "⚡ Forward deployed by instinct: embedded with the business, translating messy real-world problems into agents that ship — not demos",
+      ],
+      softwareSkills: [
+        {
+          skillName: "Python",
+          fontAwesomeClassname: "simple-icons:python",
+          style: {
+            color: "#3776AB",
+          },
+        },
+        {
+          skillName: "LangChain",
+          fontAwesomeClassname: "simple-icons:langchain",
+          style: {
+            color: "#1C3C3C",
+          },
+        },
+        {
+          skillName: "OpenAI",
+          fontAwesomeClassname: "simple-icons:openai",
+          style: {
+            color: "#412991",
+          },
+        },
+        {
+          skillName: "Anthropic",
+          fontAwesomeClassname: "simple-icons:anthropic",
+          style: {
+            color: "#191919",
+          },
+        },
+        {
+          skillName: "Ollama",
+          fontAwesomeClassname: "simple-icons:ollama",
+          style: {
+            color: "#000000",
+          },
+        },
+        {
+          skillName: "Redis",
+          fontAwesomeClassname: "simple-icons:redis",
+          style: {
+            color: "#DC382D",
+          },
+        },
+        {
+          skillName: "PostgreSQL",
+          fontAwesomeClassname: "simple-icons:postgresql",
+          style: {
+            color: "#4169E1",
+          },
+        },
+        {
+          skillName: "FastAPI",
+          fontAwesomeClassname: "simple-icons:fastapi",
+          style: {
+            color: "#009688",
+          },
+        },
+      ],
+    },
     {
       title: "Full Stack Software Development",
       fileName: "FullStackImg",
@@ -376,7 +444,7 @@ const experience = {
   title: "Experience",
   subtitle: "Work & Internship",
   description:
-    "As an accomplished software developer with a multifaceted career spanning diverse industries, including fintech, bioinformatics, and the semiconductor sector, I bring a unique blend of expertise and adaptability to the table. My journey in software development has allowed me to not only master the intricacies of cutting-edge technologies but also to understand the distinct needs and challenges of each industry. This extensive experience has made me agile, enabling me to seamlessly integrate into any organization and quickly adapt to its unique objectives and processes. It's this versatility that sets me apart, empowering me to not only meet but exceed the expectations of my employers, regardless of the industry. I'm excited to contribute my skills and knowledge to drive success for the next company I join.",
+    "My career has run from fintech at Morgan Stanley, through bioinformatics research and audio systems at Qualcomm, to where it points now: AI agents at Walmart Global Tech. That range turned out to be the perfect preparation — agents sit at the intersection of distributed systems, data infrastructure, and product, and every stop taught me one of them. Today I focus on making autonomous systems reliable enough for production at retail scale.",
   header_image_path: "experience.svg",
   sections: [
     {
