@@ -489,8 +489,7 @@ const publications = {
       createdAt: "2014-03-14T16:26:54Z",
       description:
         "AI Agent to give you recommended products based on your preferences and past purchases",
-      url:
-        "https://www.ijcseonline.org/pdf_paper_view.php?paper_id=845&29-IJCSE-01562.pdf",
+      url: "https://ijcseonline.org/index.php/j/article/view/880/874",
     },
   ],
 };
