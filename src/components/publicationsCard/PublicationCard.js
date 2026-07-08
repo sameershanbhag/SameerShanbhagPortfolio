@@ -8,10 +8,19 @@ export default function PublicationCard({ pub, theme }) {
     win.focus();
   }
 
+  const accent = theme.jacketColor;
+  const publishedOn = new Date(pub.createdAt).toLocaleDateString("en-US", {
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
   return (
     <div
       className="publication-card-div"
-      style={{ backgroundColor: theme.highlight }}
+      style={{
+        background: `linear-gradient(180deg, ${accent}1f 0%, ${theme.body} 88px)`,
+        borderTop: `4px solid ${accent}`,
+      }}
     >
       <Fade bottom duration={2000} distance="40px">
         <div key={pub.id} onClick={() => openPubinNewTab(pub.url)}>
@@ -28,7 +37,10 @@ export default function PublicationCard({ pub, theme }) {
               className="publication-creation-date subTitle"
               style={{ color: theme.secondaryText }}
             >
-              Published on {pub.createdAt.split("T")[0]}
+              Published {publishedOn}
+            </p>
+            <p className="publication-view-link" style={{ color: accent }}>
+              Read the paper →
             </p>
           </div>
           {/* <div className="repo-stats">

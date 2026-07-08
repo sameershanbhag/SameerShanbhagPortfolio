@@ -115,3 +115,21 @@
     margin-top: 30px;
   }
 }
+
+/* Publications: auto-fit collapses unused tracks — one paper spans the full
+   width, two papers split it in half, three+ behave like the project grid. */
+.publication-cards-div-main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  align-items: stretch;
+  gap: 30px;
+  margin: 50px 40px 0;
+}
+
+@media (max-width: 768px) {
+  .publication-cards-div-main {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 30px;
+  }
+}
