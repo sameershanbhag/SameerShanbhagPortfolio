@@ -1,17 +1,21 @@
 .dev-icons-languages {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
   padding-left: 0;
   list-style: none;
-  font-size: 2rem;
-  margin-bottom: 0px;
-  margin-top: 0px;
-  text-align: right;
+  font-size: 1.5rem;
+  margin: 0;
+  text-align: left;
 }
 
 .software-skill-inline-languages {
-  display: inline-block;
-  margin-right: 20px;
-  margin-bottom: 0px;
+  display: inline-flex;
+  align-items: center;
+  margin: 0;
   font-family: "Google Sans Regular";
+  line-height: 1;
 }
 
 @media (max-width: 768px) {

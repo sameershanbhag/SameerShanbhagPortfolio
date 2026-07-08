@@ -20,7 +20,13 @@
 }
 
 .repo-view-link {
-  margin: 1rem 0 0;
+  margin: 0.75rem 0 0;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.repo-card-div:hover .repo-view-link {
+  opacity: 1;
   font-family: "Google Sans Medium";
   font-size: 14px;
   text-align: left;
@@ -96,6 +102,11 @@
 .repo-details {
   display: flex;
   flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 1.1rem;
+  padding-top: 0.9rem;
 }
 
 .repo-creation-date {

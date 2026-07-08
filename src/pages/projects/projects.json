@@ -127,7 +127,7 @@
     {
       "id": "java-microservices",
       "name": "Java Microservices - Spring Cloud",
-      "createdAt": "2023-12-1T16:26:54Z",
+      "createdAt": "2023-12-01T00:00:00Z",
       "url": "https://github.com/sameershanbhag",
       "description": "🚀 Developed a microservices architecture with Java, learning to use Spring Boot, Docker, and MongoDB. Integrated services like inventory and orders, focusing on making the system scalable and secure. Worked with an API Gateway, Eureka Server, Maven, and Kafka to manage load balancing and security using OAuth2 with JWT, enhancing my skills in building efficient and secure systems.",
       "isFork": true,

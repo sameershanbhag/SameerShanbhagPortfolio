@@ -9,12 +9,17 @@ export default function GithubRepoCard({ repo, theme }) {
     win.focus();
   }
 
-  const accent = repo.color || "#5E548E";
+  const accent = theme.jacketColor;
+  const createdOn = new Date(repo.createdAt).toLocaleDateString("en-US", {
+    month: "short",
+    year: "numeric",
+    timeZone: "UTC",
+  });
   return (
     <div
       className="repo-card-div"
       style={{
-        background: `linear-gradient(180deg, ${accent}10 0%, #ffffff 90px)`,
+        background: `linear-gradient(180deg, ${theme.headerColor} 0%, ${theme.body} 88px)`,
         borderTop: `4px solid ${accent}`,
       }}
     >
@@ -34,24 +39,27 @@ export default function GithubRepoCard({ repo, theme }) {
                 d="M4 9H3V8h1v1zm0-3H3v1h1V6zm0-2H3v1h1V4zm0-2H3v1h1V2zm8-1v12c0 .55-.45 1-1 1H6v2l-1.5-1.5L3 16v-2H1c-.55 0-1-.45-1-1V1c0-.55.45-1 1-1h10c.55 0 1 .45 1 1zm-1 10H1v2h2v-1h3v1h5v-2zm0-10H2v9h9V1z"
               ></path>
             </svg>
-            <p className="repo-name" style={{ color: accent }}>
+            <p className="repo-name" style={{ color: theme.text }}>
               {repo.name}
             </p>
           </div>
           <p className="repo-description" style={{ color: theme.text }}>
             {repo.description}
           </p>
-          <div className="repo-details">
-            <p
-              className="repo-creation-date subTitle"
-              style={{ color: theme.secondaryText }}
-            >
-              Created on {repo.createdAt.split("T")[0]}
-            </p>
+          <div
+            className="repo-details"
+            style={{ borderTop: `1px solid ${theme.headerColor}` }}
+          >
             <ProjectLanguages
               className="repo-languages"
               logos={repo.languages}
             />
+            <p
+              className="repo-creation-date subTitle"
+              style={{ color: theme.secondaryText }}
+            >
+              {createdOn}
+            </p>
           </div>
           <p className="repo-view-link" style={{ color: accent }}>
             View on GitHub →
