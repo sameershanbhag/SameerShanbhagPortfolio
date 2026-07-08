@@ -1,6 +1,48 @@
 {
   "data": [
     {
+      "id": "pyautonomy",
+      "name": "PyAutonomy",
+      "createdAt": "2026-03-01T00:00:00Z",
+      "url": "https://github.com/sameershanbhag/PyAutonomy",
+      "description": "🔥 Local-first autonomous AI agent that runs as a daemon on your machine — a 100-step agentic loop driving 38 tools (filesystem, shell, browser, Python sandbox, OS integration) behind security approval policies. Multi-agent swarm orchestration, persistent memory with vector search, cron scheduling with heartbeat, and self-hosted observability, all working with Anthropic, OpenAI, or fully-offline local models. Includes GATE, a grammar-constrained tool-calling mode that cuts tool-token overhead ~88% on local models while improving tool-selection accuracy.",
+      "isFork": false,
+      "languages": [
+        {
+          "name": "Python",
+          "iconifyClass": "simple-icons:python"
+        },
+        {
+          "name": "FastAPI",
+          "iconifyClass": "simple-icons:fastapi"
+        },
+        {
+          "name": "Anthropic",
+          "iconifyClass": "simple-icons:anthropic"
+        },
+        {
+          "name": "OpenAI",
+          "iconifyClass": "simple-icons:openai"
+        },
+        {
+          "name": "Ollama",
+          "iconifyClass": "simple-icons:ollama"
+        },
+        {
+          "name": "SQLite",
+          "iconifyClass": "simple-icons:sqlite"
+        },
+        {
+          "name": "Next.js",
+          "iconifyClass": "simple-icons:nextdotjs"
+        },
+        {
+          "name": "Docker",
+          "iconifyClass": "simple-icons:docker"
+        }
+      ]
+    },
+    {
       "id": "notion-ai-sameer",
       "name": "Notion AI",
       "createdAt": "2023-11-29T16:26:54Z",

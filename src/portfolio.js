@@ -471,7 +471,7 @@ const experience = {
 const projectsHeader = {
   title: "Projects",
   description:
-    "I have developed a lot of projects trying to gain experience and knowledge with respect to the latest technologies, my goal is to develope some examples to learn and deploy them to cloud infrastructure using DevOps technologies.",
+    "My work has converged on AI agents — orchestration, tool use, memory, and the infrastructure that makes autonomous systems reliable. These projects are where I explore those ideas end to end: agent daemons that run on your own machine, RAG applications over personal data, and the cloud and DevOps plumbing that carries them to production.",
   avatar_image_path: "projects_image.svg",
 };
 
