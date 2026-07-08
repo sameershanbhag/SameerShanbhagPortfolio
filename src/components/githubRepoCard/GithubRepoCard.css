@@ -78,23 +78,14 @@
 
 .repo-name-div {
   display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 0.5rem;
-}
-
-.repo-name-left {
-  display: flex;
   align-items: center;
-  min-width: 0;
 }
 
 .repo-creation-date {
-  margin: 0;
-  font-size: 14px;
-  white-space: nowrap;
-  flex-shrink: 0;
+  margin: 0.25rem 0 0 calc(16px + 0.5rem);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  text-align: left;
 }
 
 .repo-svg {

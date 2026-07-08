@@ -28,6 +28,7 @@ class ProjectLanguages extends Component {
                       data-icon={logo.iconifyClass}
                       data-inline="false"
                     ></span>
+                    <span className="language-chip-name">{logo.name}</span>
                   </li>
                 </OverlayTrigger>
               );

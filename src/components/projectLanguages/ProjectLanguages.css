@@ -2,10 +2,10 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
+  gap: 8px;
   padding-left: 0;
   list-style: none;
-  font-size: 1.5rem;
+  font-size: 1rem;
   margin: 0;
   text-align: left;
 }
@@ -13,9 +13,20 @@
 .software-skill-inline-languages {
   display: inline-flex;
   align-items: center;
+  gap: 6px;
   margin: 0;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(94, 84, 142, 0.08);
+  border: 1px solid rgba(94, 84, 142, 0.18);
   font-family: "Google Sans Regular";
   line-height: 1;
+}
+
+.language-chip-name {
+  font-size: 12px;
+  color: #5e548e;
+  white-space: nowrap;
 }
 
 @media (max-width: 768px) {
