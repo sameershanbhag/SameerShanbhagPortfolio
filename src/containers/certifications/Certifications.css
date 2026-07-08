@@ -1,3 +1,11 @@
+#certs {
+  margin-top: 60px;
+}
+
+.certs-header-div {
+  margin-bottom: 24px;
+}
+
 .certs-header {
   font-size: 40px;
   line-height: 1.1;
@@ -19,13 +27,29 @@
 }
 
 @media (max-width: 1380px) {
-  .certs-header {
+  #certs {
+  margin-top: 60px;
+}
+
+.certs-header-div {
+  margin-bottom: 24px;
+}
+
+.certs-header {
     font-size: 35px;
   }
 }
 
 @media (max-width: 768px) {
-  .certs-header {
+  #certs {
+  margin-top: 60px;
+}
+
+.certs-header-div {
+  margin-bottom: 24px;
+}
+
+.certs-header {
     font-size: 30px;
   }
 }

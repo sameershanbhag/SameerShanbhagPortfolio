@@ -10,7 +10,10 @@ class DegreeCard extends Component {
       <div className="degree-card">
         {degree.logo_path && (
           <Flip left duration={2000}>
-            <div className="card-img">
+            <div
+              className="card-img"
+              style={{ border: `3px solid ${degree.color || theme.headerColor}` }}
+            >
               <img
                 style={{
                   maxWidth: "100%",
@@ -26,11 +29,15 @@ class DegreeCard extends Component {
         <Fade right duration={2000} distance="40px">
           <div
             className="card-body"
-            style={{ width: degree.logo_path ? "90%" : "100%" }}
+            style={{
+              width: degree.logo_path ? "90%" : "100%",
+              borderTop: `4px solid ${degree.color || theme.headerColor}`,
+              background: `linear-gradient(180deg, ${degree.color || theme.headerColor}12 0%, transparent 120px)`,
+            }}
           >
             <div
               className="body-header"
-              style={{ backgroundColor: theme.headerColor }}
+              style={{ backgroundColor: `${degree.color || theme.headerColor}22` }}
             >
               <div className="body-header-title">
                 <h2 className="card-title" style={{ color: theme.text }}>
@@ -62,9 +69,9 @@ class DegreeCard extends Component {
                 >
                   <div
                     className="visit-btn"
-                    style={{ backgroundColor: theme.headerColor }}
+                    style={{ backgroundColor: degree.color || theme.headerColor }}
                   >
-                    <p className="btn" style={{ color: theme.text }}>
+                    <p className="btn" style={{ color: "#ffffff" }}>
                       Visit Website
                     </p>
                   </div>

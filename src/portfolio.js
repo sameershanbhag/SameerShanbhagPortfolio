@@ -275,6 +275,7 @@ const degrees = {
         "⚡ During my university journey, I also had the opportunity to intern at Qualcomm, where I applied my academic knowledge to real-world projects. This practical exposure solidified my understanding of Audio DSP concepts and left me with a well-rounded perspective on the field.",
       ],
       website_link: "https://www.uncc.edu/",
+      color: "#005035",
     },
     {
       title: "SIES Graduate School of Technology",
@@ -289,6 +290,7 @@ const degrees = {
         "⚡ During my time as a member of the tech team for the Student Council, I contributed to the development of websites for various college events. This practical experience allowed me to apply my knowledge and learn important teamwork and problem-solving skills.",
       ],
       website_link: "http://sies.edu.in",
+      color: "#F26E21",
     },
   ],
 };

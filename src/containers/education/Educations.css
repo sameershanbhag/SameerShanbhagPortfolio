@@ -16,3 +16,18 @@
     font-size: 30px;
   }
 }
+
+/* Section rhythm: breathing room between the page hero and each section. */
+#educations {
+  margin-top: 30px;
+}
+
+.educations-header-div {
+  margin-bottom: 20px;
+}
+
+.educations-body-div {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
