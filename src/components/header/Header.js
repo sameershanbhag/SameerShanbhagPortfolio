@@ -4,6 +4,7 @@ import { Fade } from "react-reveal";
 import { NavLink, Link } from "react-router-dom";
 import { greeting, settings, contactPageData } from "../../portfolio.js";
 import SeoHeader from "../seoHeader/SeoHeader";
+import AskMeAnything from "../askMeAnything/AskMeAnything";
 
 class Header extends Component {
   render() {
@@ -92,6 +93,7 @@ class Header extends Component {
               </li>
             </ul>
           </header>
+          <AskMeAnything theme={theme} />
         </div>
       </Fade>
     );

@@ -1,0 +1,231 @@
+.ama-container {
+  max-width: 720px;
+  margin: 4px auto 0;
+  padding: 0 16px;
+  font-family: "Google Sans Regular";
+  position: relative;
+  z-index: 20;
+}
+
+.ama-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #ffffff;
+  border: 1.5px solid #e0b1cb;
+  border-radius: 999px;
+  padding: 6px 8px 6px 16px;
+  box-shadow: 0 4px 14px rgba(35, 25, 66, 0.08);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.ama-bar:focus-within {
+  border-color: #5e548e;
+  box-shadow: 0 6px 18px rgba(94, 84, 142, 0.18);
+}
+
+.ama-spark {
+  flex-shrink: 0;
+}
+
+.ama-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: 15px;
+  font-family: "Google Sans Regular";
+  color: #231942;
+  min-width: 0;
+}
+
+.ama-input::placeholder {
+  color: #a08cb8;
+}
+
+.ama-send {
+  border: none;
+  border-radius: 999px;
+  background: #5e548e;
+  color: #ffffff;
+  font-family: "Google Sans Medium";
+  font-size: 14px;
+  padding: 8px 18px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.ama-send:hover:not(:disabled) {
+  background: #231942;
+}
+
+.ama-send:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.ama-close {
+  border: none;
+  background: transparent;
+  color: #655e7a;
+  font-size: 20px;
+  line-height: 1;
+  padding: 4px 8px;
+  cursor: pointer;
+}
+
+.ama-panel {
+  background: #ffffff;
+  border: 1px solid #e0b1cb;
+  border-radius: 16px;
+  margin-top: 8px;
+  padding: 14px;
+  box-shadow: 0 10px 28px rgba(35, 25, 66, 0.14);
+}
+
+.ama-hint {
+  margin: 0 0 8px;
+  font-size: 13px;
+  color: #655e7a;
+}
+
+.ama-log {
+  max-height: 280px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ama-msg {
+  padding: 9px 13px;
+  border-radius: 14px;
+  font-size: 14px;
+  line-height: 1.55;
+  max-width: 85%;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+}
+
+.ama-msg-user {
+  align-self: flex-end;
+  background: #5e548e;
+  color: #ffffff;
+  border-bottom-right-radius: 4px;
+}
+
+.ama-msg-assistant {
+  align-self: flex-start;
+  background: #f3e3ec;
+  color: #231942;
+  border-bottom-left-radius: 4px;
+}
+
+.ama-contact-open {
+  margin-top: 10px;
+  width: 100%;
+  border: 1.5px dashed #be95c4;
+  border-radius: 10px;
+  background: transparent;
+  color: #5e548e;
+  font-family: "Google Sans Medium";
+  font-size: 14px;
+  padding: 9px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.ama-contact-open:hover {
+  background: #f3e3ec;
+}
+
+.ama-contact {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ama-contact-row {
+  display: flex;
+  gap: 8px;
+}
+
+.ama-contact input,
+.ama-contact textarea {
+  width: 100%;
+  border: 1px solid #e0b1cb;
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-family: "Google Sans Regular";
+  font-size: 14px;
+  color: #231942;
+  resize: vertical;
+}
+
+.ama-contact input:focus,
+.ama-contact textarea:focus {
+  outline: none;
+  border-color: #5e548e;
+}
+
+.ama-honeypot {
+  position: absolute;
+  left: -9999px;
+  height: 0;
+  width: 0;
+  border: 0;
+  padding: 0;
+}
+
+.ama-contact-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.ama-contact-actions button {
+  border: none;
+  border-radius: 8px;
+  font-family: "Google Sans Medium";
+  font-size: 14px;
+  padding: 8px 16px;
+  cursor: pointer;
+}
+
+.ama-contact-actions button[type="button"] {
+  background: transparent;
+  color: #655e7a;
+}
+
+.ama-contact-actions button[type="submit"] {
+  background: #5e548e;
+  color: #ffffff;
+}
+
+.ama-contact-actions button[type="submit"]:hover:not(:disabled) {
+  background: #231942;
+}
+
+.ama-contact-done {
+  margin: 10px 0 0;
+  text-align: center;
+  color: #1c7c54;
+  font-family: "Google Sans Medium";
+  font-size: 14px;
+}
+
+.ama-contact-error {
+  margin: 0;
+  color: #b4262a;
+  font-size: 13px;
+}
+
+@media (max-width: 768px) {
+  .ama-input::placeholder {
+    font-size: 13px;
+  }
+  .ama-contact-row {
+    flex-direction: column;
+  }
+}
