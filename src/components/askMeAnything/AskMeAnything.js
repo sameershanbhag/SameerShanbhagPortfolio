@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import "./AskMeAnything.css";
 
 const API_BASE =
-  import.meta.env.VITE_AMA_API_BASE || "https://ama.sameershanbhag.com";
+  import.meta.env.VITE_AMA_API_BASE || "https://ama-api-theta.vercel.app";
 
 export default function AskMeAnything({ theme }) {
   const [open, setOpen] = useState(false);
