@@ -70,6 +70,30 @@ export default async function handler(req, res) {
     });
   }
 
+  // Content negotiation: only stream when the client opts in. Older cached
+  // frontend bundles call res.json() and would choke on a text stream.
+  const wantsStream = req.headers["x-ama-stream"] === "1";
+  if (!wantsStream) {
+    const decoder = new TextDecoder();
+    let buffer = "";
+    let full = "";
+    for await (const chunk of anthropic.body) {
+      buffer += decoder.decode(chunk, { stream: true });
+      const lines = buffer.split("\n");
+      buffer = lines.pop();
+      for (const line of lines) {
+        if (!line.startsWith("data: ")) continue;
+        try {
+          const event = JSON.parse(line.slice(6));
+          if (event.type === "content_block_delta" && event.delta?.text) {
+            full += event.delta.text;
+          }
+        } catch {}
+      }
+    }
+    return res.status(200).json({ reply: full.trim() });
+  }
+
   // Re-stream Anthropic's SSE as plain text chunks (just the text deltas).
   res.writeHead(200, {
     "Content-Type": "text/plain; charset=utf-8",

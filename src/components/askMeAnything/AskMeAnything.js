@@ -33,7 +33,7 @@ export default function AskMeAnything({ theme }) {
     try {
       const res = await fetch(`${API_BASE}/api/chat`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "X-AMA-Stream": "1" },
         body: JSON.stringify({ messages: next }),
       });
       const type = res.headers.get("content-type") || "";
