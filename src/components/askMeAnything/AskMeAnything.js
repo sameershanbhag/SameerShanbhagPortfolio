@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import "./AskMeAnything.css";
+import Markdown from "./Markdown";
 
 const API_BASE =
   import.meta.env.VITE_AMA_API_BASE || "https://ama-api-theta.vercel.app";
@@ -35,16 +36,44 @@ export default function AskMeAnything({ theme }) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages: next }),
       });
-      const data = await res.json();
-      setMessages([
-        ...next,
-        {
-          role: "assistant",
-          content:
-            data.reply ||
-            "Hmm, something went sideways — try again, or leave Sameer a message below.",
-        },
-      ]);
+      const type = res.headers.get("content-type") || "";
+      if (type.includes("application/json")) {
+        // rate limit / error path returns JSON
+        const data = await res.json();
+        setMessages([
+          ...next,
+          {
+            role: "assistant",
+            content:
+              data.reply ||
+              data.error ||
+              "Hmm, something went sideways — try again, or leave Sameer a message below.",
+          },
+        ]);
+      } else {
+        // streaming path: append text deltas as they arrive
+        setMessages([...next, { role: "assistant", content: "" }]);
+        const reader = res.body.getReader();
+        const decoder = new TextDecoder();
+        let acc = "";
+        for (;;) {
+          const { done, value } = await reader.read();
+          if (done) break;
+          acc += decoder.decode(value, { stream: true });
+          const current = acc;
+          setMessages([...next, { role: "assistant", content: current }]);
+          scrollLog();
+        }
+        if (!acc.trim()) {
+          setMessages([
+            ...next,
+            {
+              role: "assistant",
+              content: "Hmm, I came up empty — try rephrasing?",
+            },
+          ]);
+        }
+      }
     } catch {
       setMessages([
         ...next,
@@ -130,7 +159,7 @@ export default function AskMeAnything({ theme }) {
           <div className="ama-log" ref={logRef}>
             {messages.map((m, i) => (
               <div key={i} className={`ama-msg ama-msg-${m.role}`}>
-                {m.content}
+                {m.role === "assistant" ? <Markdown text={m.content} /> : m.content}
               </div>
             ))}
             {busy && <div className="ama-msg ama-msg-assistant">Thinking…</div>}

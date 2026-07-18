@@ -2,12 +2,16 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { applyCors, clientIp, rateLimit, globalBudget } from "../_lib/guard.js";
 
+export const config = { supportsResponseStreaming: true };
+
 const KNOWLEDGE = readFileSync(join(process.cwd(), "knowledge.md"), "utf8");
 
 const SYSTEM = `${KNOWLEDGE}
 
 You are answering as "Sameer's assistant" inside a small chat widget on his
-portfolio. Follow the Rules section strictly.`;
+portfolio. Follow the Rules section strictly. Format replies in simple
+markdown only: **bold**, bullet lists, and [links](url) — no headings,
+tables, or code blocks unless asked about code.`;
 
 const MAX_INPUT_CHARS = 500;
 const MAX_TURNS = 6;
@@ -54,21 +58,42 @@ export default async function handler(req, res) {
     body: JSON.stringify({
       model: "claude-haiku-4-5-20251001",
       max_tokens: 300,
+      stream: true,
       system: SYSTEM,
       messages: trimmed,
     }),
   });
 
-  if (!anthropic.ok) {
+  if (!anthropic.ok || !anthropic.body) {
     return res.status(502).json({
       reply: "I'm having trouble thinking right now — try again in a moment, or use the Leave a message button.",
     });
   }
-  const data = await anthropic.json();
-  const reply = (data.content || [])
-    .filter((b) => b.type === "text")
-    .map((b) => b.text)
-    .join("")
-    .trim();
-  return res.status(200).json({ reply });
+
+  // Re-stream Anthropic's SSE as plain text chunks (just the text deltas).
+  res.writeHead(200, {
+    "Content-Type": "text/plain; charset=utf-8",
+    "Cache-Control": "no-cache",
+    "X-Accel-Buffering": "no",
+  });
+
+  const decoder = new TextDecoder();
+  let buffer = "";
+  for await (const chunk of anthropic.body) {
+    buffer += decoder.decode(chunk, { stream: true });
+    const lines = buffer.split("\n");
+    buffer = lines.pop();
+    for (const line of lines) {
+      if (!line.startsWith("data: ")) continue;
+      try {
+        const event = JSON.parse(line.slice(6));
+        if (event.type === "content_block_delta" && event.delta?.text) {
+          res.write(event.delta.text);
+        }
+      } catch {
+        // ignore malformed keepalive lines
+      }
+    }
+  }
+  res.end();
 }
