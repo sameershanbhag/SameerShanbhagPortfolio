@@ -24,7 +24,7 @@ import {
 const de = {
   greeting: {
     subTitle:
-      "Ich entwickle KI-Agenten und arbeite wie ein Forward Deployed Engineer — nah am Problem, mit Verantwortung von Anfang bis Ende. Bei Walmart Global Tech war ich Gründungsingenieur von Marty, einem der größten KI-Agenten von Walmart, und habe dessen Multi-Agent-Architektur vom Konzept bis in die Produktion gebracht. Die Abende gehören PyAutonomy, meinem local-first autonomen Agenten, und meinem Blog, in dem ich über Agent Engineering und die Ökonomie von LLM-Systemen schreibe. Ein Jahrzehnt in Fintech, Bioinformatik und der Halbleiterbranche hat mich gelehrt, Software zu bauen, die Bestand hat — in Agenten läuft all das zusammen.",
+      "Ich entwickle KI-Agenten und arbeite wie ein Forward Deployed Engineer — nah am Problem, mit Verantwortung von Anfang bis Ende. Bei Walmart Global Tech war ich Gründungsingenieur von Marty, einem der größten KI-Agenten von Walmart, und habe dessen Multi-Agent-Architektur vom Konzept bis in die Produktion gebracht. Die Abende gehören PyAutonomy, meinem local-first autonomen Agenten, und meinem Blog, in dem ich über Agent Engineering und die Ökonomie von LLM-Systemen schreibe. Ein Jahrzehnt in Fintech, Bioinformatik und der Halbleiterbranche hat mich gelehrt, Software zu bauen, die Bestand hat — in Agenten läuft all das zusammen. Ich bin offen für neue Chancen — besonders in Deutschland und Kanada.",
   },
 
   skills: {
@@ -135,7 +135,7 @@ const de = {
   projectsHeader: {
     title: "Projekte",
     description:
-      "Meine Arbeit hat sich auf KI-Agenten verdichtet — Orchestrierung, Tool-Nutzung, Gedächtnis und die Infrastruktur, die autonome Systeme zuverlässig macht. In diesen Projekten denke ich diese Ideen von Anfang bis Ende durch: Agent-Daemons, die auf der eigenen Maschine laufen, RAG-Anwendungen über persönliche Daten und die Cloud- und DevOps-Klempnerei, die sie in die Produktion trägt.",
+      "Meine Arbeit hat sich auf KI-Agenten verdichtet — Orchestrierung, Tool-Nutzung, Gedächtnis und die Infrastruktur, die autonome Systeme zuverlässig macht. In diesen Projekten denke ich diese Ideen von Anfang bis Ende durch: Agent-Daemons, die auf der eigenen Maschine laufen, RAG-Anwendungen über persönliche Daten und die Cloud- und DevOps-Infrastrukturarbeit, die sie in die Produktion trägt.",
   },
 
   publicationsHeader: {

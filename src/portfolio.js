@@ -23,7 +23,7 @@ const greeting = {
   logo_name: "SameerShanbhag",
   nickname: "Sam",
   subTitle:
-    "I build AI agents and work like a forward deployed engineer — embedded with the problem, shipping end to end. At Walmart Global Tech I was a founding engineer on Marty, one of Walmart's largest AI agents, taking its multi-agent architecture from concept to production. Nights go to PyAutonomy, my local-first autonomous agent, and to my blog, where I write about agent engineering and the economics of LLM systems. A decade across fintech, bioinformatics, and semiconductors taught me how to ship software that lasts — agents are where all of it converges.",
+    "I build AI agents and work like a forward deployed engineer — embedded with the problem, shipping end to end. At Walmart Global Tech I was a founding engineer on Marty, one of Walmart's largest AI agents, taking its multi-agent architecture from concept to production. Nights go to PyAutonomy, my local-first autonomous agent, and to my blog, where I write about agent engineering and the economics of LLM systems. A decade across fintech, bioinformatics, and semiconductors taught me how to ship software that lasts — agents are where all of it converges. I'm open to new opportunities — especially in Germany and Canada.",
   resumeLink:
     "https://drive.google.com/file/d/1CyDfgsYK4oSOSNHed52jv2szaxwqg6d3/view?usp=sharing",
   portfolio_repository: "https://github.com/sameershanbhag",
