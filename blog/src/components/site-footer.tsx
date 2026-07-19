@@ -1,9 +1,20 @@
-/** Same closing line as the portfolio's Footer component. */
+"use client";
+
+import { useLang } from "@/lib/lang";
+
+/** Same closing line as the portfolio's Footer component, both languages. */
 export default function SiteFooter() {
+  const lang = useLang();
+  const made = lang === "de" ? "Gemacht mit" : "Made with";
+  const by = lang === "de" ? "von" : "by";
   return (
     <footer className="mt-16 pb-8">
       <p className="text-center font-bold text-muted">
-        Made with <span role="img" aria-label="love">❤️</span> by Sameer Shanbhag
+        {made}{" "}
+        <span role="img" aria-label="love">
+          ❤️
+        </span>{" "}
+        {by} Sameer Shanbhag
       </p>
       <nav
         aria-label="Footer"

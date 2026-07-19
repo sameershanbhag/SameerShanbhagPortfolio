@@ -1,13 +1,37 @@
+"use client";
+
 import Link from "next/link";
+import { useLang, setLang } from "@/lib/lang";
 
 const PORTFOLIO = "https://sameershanbhag.com";
 
+const NAV = {
+  en: {
+    home: "Home",
+    education: "Education",
+    experience: "Experience",
+    projects: "Projects",
+    blog: "Blog",
+    contact: "Contact Me",
+  },
+  de: {
+    home: "Startseite",
+    education: "Ausbildung",
+    experience: "Erfahrung",
+    projects: "Projekte",
+    blog: "Blog",
+    contact: "Kontakt",
+  },
+};
+
 /**
  * Pixel-faithful port of the portfolio's Header (components/header/Header.js):
- * same logo mark, nav items, spacing, hover fill and mobile hamburger, so the
- * blog reads as another page of sameershanbhag.com.
+ * same logo mark, nav items, spacing, hover fill, mobile hamburger, and the
+ * EN|DE language toggle, so the blog reads as another page of the same site.
  */
 export default function SiteHeader() {
+  const lang = useLang();
+  const t = NAV[lang];
   return (
     <header className="pf-header">
       <Link href="/" className="pf-logo">
@@ -21,24 +45,43 @@ export default function SiteHeader() {
       </label>
       <ul className="pf-menu">
         <li>
-          <a href={`${PORTFOLIO}/home`}>Home</a>
+          <a href={`${PORTFOLIO}/home`}>{t.home}</a>
         </li>
         <li>
-          <a href={`${PORTFOLIO}/education`}>Education</a>
+          <a href={`${PORTFOLIO}/education`}>{t.education}</a>
         </li>
         <li>
-          <a href={`${PORTFOLIO}/experience`}>Experience</a>
+          <a href={`${PORTFOLIO}/experience`}>{t.experience}</a>
         </li>
         <li>
-          <a href={`${PORTFOLIO}/projects`}>Projects</a>
+          <a href={`${PORTFOLIO}/projects`}>{t.projects}</a>
         </li>
         <li>
           <Link href="/" className="pf-active" aria-current="page">
-            Blog
+            {t.blog}
           </Link>
         </li>
         <li>
-          <a href={`${PORTFOLIO}/contact`}>Contact Me</a>
+          <a href={`${PORTFOLIO}/contact`}>{t.contact}</a>
+        </li>
+        <li>
+          <span className="pf-lang-toggle" role="button" aria-label="Language / Sprache">
+            <button
+              type="button"
+              className={`pf-lang-option ${lang === "en" ? "pf-lang-active" : ""}`}
+              onClick={() => setLang("en")}
+            >
+              EN
+            </button>
+            <span className="pf-lang-divider">|</span>
+            <button
+              type="button"
+              className={`pf-lang-option ${lang === "de" ? "pf-lang-active" : ""}`}
+              onClick={() => setLang("de")}
+            >
+              DE
+            </button>
+          </span>
         </li>
       </ul>
     </header>

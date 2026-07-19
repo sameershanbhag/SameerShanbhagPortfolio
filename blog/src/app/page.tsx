@@ -1,6 +1,7 @@
 import { getAllPosts, getAllTags } from "@/lib/posts";
 import PostCard from "@/components/post-card";
 import TagPill from "@/components/tag-pill";
+import HeroTagline from "@/components/hero-tagline";
 
 export default function Home() {
   const posts = getAllPosts();
@@ -13,10 +14,7 @@ export default function Home() {
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">
           Notes from the <span className="text-accent">workbench</span>
         </h1>
-        <p className="mx-auto mt-4 max-w-xl text-lg text-muted leading-relaxed">
-          Writing on software engineering, AI agents, and whatever else I&apos;m
-          building. New posts land here first.
-        </p>
+        <HeroTagline />
         {tags.length > 0 && (
           <nav aria-label="Browse by topic" className="mt-6 flex flex-wrap justify-center gap-2">
             {tags.map(({ tag, count }) => (

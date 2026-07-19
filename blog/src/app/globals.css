@@ -479,3 +479,32 @@ body {
   height: 0;
   pointer-events: none;
 }
+
+/* Language toggle in the blog header (mirrors the portfolio's) */
+.pf-lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  padding: 20px 20px;
+  cursor: pointer;
+  user-select: none;
+}
+
+.pf-lang-option {
+  border: none;
+  background: transparent;
+  font: inherit;
+  color: var(--color-ink);
+  opacity: 0.5;
+  cursor: pointer;
+  padding: 0;
+}
+
+.pf-lang-option.pf-lang-active {
+  font-weight: bold;
+  opacity: 1;
+}
+
+.pf-lang-divider {
+  padding: 0 6px;
+  opacity: 0.4;
+}
