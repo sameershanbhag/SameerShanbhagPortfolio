@@ -6,6 +6,7 @@
       "createdAt": "2026-03-01T00:00:00Z",
       "url": "https://github.com/sameershanbhag/PyAutonomy",
       "description": "🔥 Local-first autonomous AI agent that runs as a daemon on your machine — a 100-step agentic loop driving 38 tools (filesystem, shell, browser, Python sandbox, OS integration) behind security approval policies. Multi-agent swarm orchestration, persistent memory with vector search, cron scheduling with heartbeat, and self-hosted observability, all working with Anthropic, OpenAI, or fully-offline local models. Includes GATE, a grammar-constrained tool-calling mode that cuts tool-token overhead ~88% on local models while improving tool-selection accuracy.",
+      "description_de": "🔥 Local-first autonomer KI-Agent, der als Daemon auf der eigenen Maschine läuft — eine 100-Schritte-Agentenschleife steuert 38 Tools (Dateisystem, Shell, Browser, Python-Sandbox, OS-Integration) hinter Sicherheits-Freigaberichtlinien. Multi-Agent-Schwarm-Orchestrierung, persistentes Gedächtnis mit Vektorsuche, Cron-Scheduling mit Heartbeat und selbstgehostete Observability — wahlweise mit Anthropic, OpenAI oder komplett offline mit lokalen Modellen. Enthält GATE, einen grammatikbeschränkten Tool-Calling-Modus, der den Tool-Token-Overhead auf lokalen Modellen um ~88 % senkt und zugleich die Tool-Auswahl präziser macht.",
       "isFork": false,
       "languages": [
         {
@@ -49,6 +50,7 @@
       "createdAt": "2023-11-29T16:26:54Z",
       "url": "https://github.com/sameershanbhag/NotionAI",
       "description": "🔥 Developed a clone of Notion - with AI added functionalities to automatically generated Thumbnails using DALLE-3 and give suggestions using Chat GPT while you take the notes.",
+      "description_de": "🔥 Ein Notion-Klon mit KI-Funktionen: Thumbnails entstehen automatisch mit DALLE-3, und Chat GPT liefert Vorschläge, während man Notizen schreibt.",
       "isFork": false,
       "languages": [
         {
@@ -92,6 +94,7 @@
       "createdAt": "2023-11-16T16:26:54Z",
       "url": "https://github.com/sameershanbhag/Langchain_Personal_Assistant",
       "description": "🔥 Python RAG based AI Application that works with the userdata (pdf) and provides responsis based on the relevant information.",
+      "description_de": "🔥 RAG-basierte KI-Anwendung in Python, die mit eigenen Daten (PDF) arbeitet und Antworten auf Basis der relevanten Informationen liefert.",
       "isFork": false,
       "languages": [
         {
@@ -115,6 +118,7 @@
       "createdAt": "2023-11-21T16:26:54Z",
       "url": "https://github.com/sameershanbhag/BookStore-Protobuf-gRPC",
       "description": "🔥 This project demonstrates the effective use of gRPC and Protobuf to facilitate communication between APIs developed in various languages and frameworks.",
+      "description_de": "🔥 Dieses Projekt zeigt den effektiven Einsatz von gRPC und Protobuf für die Kommunikation zwischen APIs, die in verschiedenen Sprachen und Frameworks entwickelt wurden.",
       "isFork": false,
       "languages": [
         {
@@ -130,6 +134,7 @@
       "createdAt": "2023-12-01T00:00:00Z",
       "url": "https://github.com/sameershanbhag",
       "description": "🚀 Developed a microservices architecture with Java, learning to use Spring Boot, Docker, and MongoDB. Integrated services like inventory and orders, focusing on making the system scalable and secure. Worked with an API Gateway, Eureka Server, Maven, and Kafka to manage load balancing and security using OAuth2 with JWT, enhancing my skills in building efficient and secure systems.",
+      "description_de": "🚀 Microservices-Architektur mit Java — aufgebaut mit Spring Boot, Docker und MongoDB. Services wie Inventar und Bestellungen sind integriert, mit Fokus auf Skalierbarkeit und Sicherheit. API Gateway, Eureka Server, Maven und Kafka übernehmen Load Balancing und Absicherung über OAuth2 mit JWT — eine gute Schule im Bau effizienter und sicherer Systeme.",
       "isFork": true,
       "languages": [
         {
