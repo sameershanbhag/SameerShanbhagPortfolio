@@ -160,9 +160,18 @@ export default function AskMeAnything({ theme }) {
             {messages.map((m, i) => (
               <div key={i} className={`ama-msg ama-msg-${m.role}`}>
                 {m.role === "assistant" ? <Markdown text={m.content} /> : m.content}
+                {busy &&
+                  m.role === "assistant" &&
+                  i === messages.length - 1 && (
+                    <span className="ama-cursor" aria-hidden="true" />
+                  )}
               </div>
             ))}
-            {busy && <div className="ama-msg ama-msg-assistant">Thinking…</div>}
+            {busy && messages[messages.length - 1]?.role === "user" && (
+              <div className="ama-msg ama-msg-assistant">
+                <span className="ama-cursor" aria-hidden="true" />
+              </div>
+            )}
           </div>
 
           {showContact ? (

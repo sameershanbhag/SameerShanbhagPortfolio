@@ -261,3 +261,28 @@
   text-decoration: underline;
   text-underline-offset: 2px;
 }
+
+/* Streaming caret */
+.ama-cursor {
+  display: inline-block;
+  width: 8px;
+  height: 1em;
+  margin-left: 3px;
+  vertical-align: text-bottom;
+  border-radius: 2px;
+  background: #5e548e;
+  animation: ama-blink 1s steps(2, start) infinite;
+}
+
+@keyframes ama-blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ama-cursor {
+    animation: none;
+    opacity: 0.6;
+  }
+}
