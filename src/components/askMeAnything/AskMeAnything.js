@@ -3,7 +3,7 @@ import "./AskMeAnything.css";
 import Markdown from "./Markdown";
 
 const API_BASE =
-  import.meta.env.VITE_AMA_API_BASE || "https://ama-api-theta.vercel.app";
+  import.meta.env.VITE_AMA_API_BASE || "https://ama.sameershanbhag.com";
 
 export default function AskMeAnything({ theme }) {
   const [open, setOpen] = useState(false);
