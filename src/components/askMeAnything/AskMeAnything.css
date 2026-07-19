@@ -286,3 +286,29 @@
     opacity: 0.6;
   }
 }
+
+/* Language switch */
+.ama-lang-row {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  margin-bottom: 6px;
+}
+
+.ama-lang {
+  border: 1px solid #e0b1cb;
+  background: transparent;
+  color: #655e7a;
+  border-radius: 999px;
+  font-family: "Google Sans Medium";
+  font-size: 11px;
+  padding: 3px 10px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.ama-lang-active {
+  background: #5e548e;
+  border-color: #5e548e;
+  color: #ffffff;
+}

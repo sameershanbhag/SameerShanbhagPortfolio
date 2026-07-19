@@ -5,7 +5,53 @@ import Markdown from "./Markdown";
 const API_BASE =
   import.meta.env.VITE_AMA_API_BASE || "https://ama.sameershanbhag.com";
 
+const UI = {
+  en: {
+    placeholder:
+      "Ask me anything about Sameer — his work, projects, or how to reach him (BETA)",
+    ask: "Ask",
+    hint: "Try: \u201cWhat does Sameer do at Walmart?\u201d \u00b7 \u201cTell me about PyAutonomy\u201d \u00b7 \u201cIs Sameer open to new roles?\u201d",
+    leaveMessage: "\ud83d\udceb Leave Sameer a message",
+    sent: "\ud83d\udcec Sent! Sameer will get back to you soon.",
+    yourName: "Your name",
+    yourEmail: "Your email",
+    yourMessage: "Your message to Sameer\u2026",
+    back: "Back",
+    send: "Send to Sameer",
+    sending: "Sending\u2026",
+    netError:
+      "I can't reach my brain right now. Try again in a bit, or leave Sameer a message below.",
+    empty: "Hmm, I came up empty — try rephrasing?",
+  },
+  de: {
+    placeholder:
+      "Frag mich alles über Sameer — seine Arbeit, Projekte oder wie du ihn erreichst (BETA)",
+    ask: "Fragen",
+    hint: "Zum Beispiel: \u201eWas macht Sameer bei Walmart?\u201c \u00b7 \u201eErz\u00e4hl mir von PyAutonomy\u201c \u00b7 \u201eIst Sameer offen f\u00fcr neue Rollen?\u201c",
+    leaveMessage: "\ud83d\udceb Sameer eine Nachricht hinterlassen",
+    sent: "\ud83d\udcec Gesendet! Sameer meldet sich bald bei dir.",
+    yourName: "Dein Name",
+    yourEmail: "Deine E-Mail",
+    yourMessage: "Deine Nachricht an Sameer\u2026",
+    back: "Zur\u00fcck",
+    send: "An Sameer senden",
+    sending: "Wird gesendet\u2026",
+    netError:
+      "Ich komme gerade nicht an mein Gehirn. Versuch es gleich nochmal oder hinterlasse Sameer unten eine Nachricht.",
+    empty: "Hmm, da kam nichts — formulier es anders?",
+  },
+};
+
+function detectLang() {
+  try {
+    const stored = localStorage.getItem("site_lang");
+    if (stored === "de" || stored === "en") return stored;
+  } catch {}
+  return (navigator.language || "en").toLowerCase().startsWith("de") ? "de" : "en";
+}
+
 export default function AskMeAnything({ theme }) {
+  const [lang, setLang] = useState(detectLang);
   const [open, setOpen] = useState(false);
   const [input, setInput] = useState("");
   const [messages, setMessages] = useState([]);
@@ -14,6 +60,26 @@ export default function AskMeAnything({ theme }) {
   const [contactState, setContactState] = useState("idle"); // idle | sending | sent | error
   const [contactError, setContactError] = useState("");
   const logRef = useRef(null);
+  const t = UI[lang];
+
+  React.useEffect(() => {
+    const onChange = (e) => {
+      const next = e?.detail?.lang;
+      if (next === "de" || next === "en") setLang(next);
+    };
+    window.addEventListener("site-lang-changed", onChange);
+    return () => window.removeEventListener("site-lang-changed", onChange);
+  }, []);
+
+  function switchLang(next) {
+    setLang(next);
+    try {
+      localStorage.setItem("site_lang", next);
+    } catch {}
+    window.dispatchEvent(
+      new CustomEvent("site-lang-changed", { detail: { lang: next } })
+    );
+  }
 
   const scrollLog = () =>
     setTimeout(() => {
@@ -34,7 +100,7 @@ export default function AskMeAnything({ theme }) {
       const res = await fetch(`${API_BASE}/api/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json", "X-AMA-Stream": "1" },
-        body: JSON.stringify({ messages: next }),
+        body: JSON.stringify({ messages: next, lang }),
       });
       const type = res.headers.get("content-type") || "";
       if (type.includes("application/json")) {
@@ -79,8 +145,7 @@ export default function AskMeAnything({ theme }) {
         ...next,
         {
           role: "assistant",
-          content:
-            "I can't reach my brain right now. Try again in a bit, or leave Sameer a message below.",
+          content: t.netError,
         },
       ]);
     } finally {
@@ -129,12 +194,12 @@ export default function AskMeAnything({ theme }) {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           onFocus={() => setOpen(true)}
-          placeholder="Ask me anything about Sameer — his work, projects, or how to reach him (BETA)"
+          placeholder={t.placeholder}
           maxLength={500}
           aria-label="Ask a question about Sameer"
         />
         <button className="ama-send" type="submit" disabled={busy || !input.trim()}>
-          {busy ? "…" : "Ask"}
+          {busy ? "…" : t.ask}
         </button>
         {open && (
           <button
@@ -150,11 +215,24 @@ export default function AskMeAnything({ theme }) {
 
       {open && (
         <div className="ama-panel">
+          <div className="ama-lang-row">
+            <button
+              type="button"
+              className={`ama-lang ${lang === "en" ? "ama-lang-active" : ""}`}
+              onClick={() => switchLang("en")}
+            >
+              EN
+            </button>
+            <button
+              type="button"
+              className={`ama-lang ${lang === "de" ? "ama-lang-active" : ""}`}
+              onClick={() => switchLang("de")}
+            >
+              DE
+            </button>
+          </div>
           {messages.length === 0 && !showContact && (
-            <p className="ama-hint">
-              Try: “What does Sameer do at Walmart?” · “Tell me about PyAutonomy”
-              · “Is Sameer open to new roles?”
-            </p>
+            <p className="ama-hint">{t.hint}</p>
           )}
           <div className="ama-log" ref={logRef}>
             {messages.map((m, i) => (
@@ -177,17 +255,17 @@ export default function AskMeAnything({ theme }) {
           {showContact ? (
             contactState === "sent" ? (
               <p className="ama-contact-done">
-                📬 Sent! Sameer will get back to you soon.
+                {t.sent}
               </p>
             ) : (
               <form className="ama-contact" onSubmit={sendContact}>
                 <div className="ama-contact-row">
-                  <input name="name" placeholder="Your name" required maxLength={80} />
-                  <input name="email" type="email" placeholder="Your email" required maxLength={120} />
+                  <input name="name" placeholder={t.yourName} required maxLength={80} />
+                  <input name="email" type="email" placeholder={t.yourEmail} required maxLength={120} />
                 </div>
                 <textarea
                   name="message"
-                  placeholder="Your message to Sameer…"
+                  placeholder={t.yourMessage}
                   required
                   maxLength={2000}
                   rows={3}
@@ -204,17 +282,17 @@ export default function AskMeAnything({ theme }) {
                 )}
                 <div className="ama-contact-actions">
                   <button type="button" onClick={() => setShowContact(false)}>
-                    Back
+                    {t.back}
                   </button>
                   <button type="submit" disabled={contactState === "sending"}>
-                    {contactState === "sending" ? "Sending…" : "Send to Sameer"}
+                    {contactState === "sending" ? t.sending : t.send}
                   </button>
                 </div>
               </form>
             )
           ) : (
             <button className="ama-contact-open" onClick={() => setShowContact(true)}>
-              📫 Leave Sameer a message
+              {t.leaveMessage}
             </button>
           )}
         </div>

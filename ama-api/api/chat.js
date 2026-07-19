@@ -39,7 +39,7 @@ export default async function handler(req, res) {
     });
   }
 
-  const { messages } = req.body || {};
+  const { messages, lang } = req.body || {};
   if (!Array.isArray(messages) || messages.length === 0) {
     return res.status(400).json({ error: "messages[] required" });
   }
@@ -59,7 +59,11 @@ export default async function handler(req, res) {
       model: "claude-haiku-4-5-20251001",
       max_tokens: 300,
       stream: true,
-      system: SYSTEM,
+      system:
+        SYSTEM +
+        (lang === "de"
+          ? "\n\npreferred_language: German — antworte auf Deutsch, außer der Besucher schreibt ausdrücklich auf Englisch."
+          : "\n\npreferred_language: English — reply in English unless the visitor writes in German."),
       messages: trimmed,
     }),
   });
