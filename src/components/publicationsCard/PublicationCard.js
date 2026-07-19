@@ -2,19 +2,26 @@ import React from "react";
 import "./PublicationCard.css";
 import "../githubRepoCard/GithubRepoCard.css";
 import { Fade } from "react-reveal";
+import { useLang } from "../../i18n/lang.js";
+import { getStrings } from "../../i18n/strings.js";
 
 export default function PublicationCard({ pub, theme }) {
+  const lang = useLang();
+  const t = getStrings(lang);
   function openPubinNewTab(url) {
     var win = window.open(url, "_blank");
     win.focus();
   }
 
   const accent = theme.jacketColor;
-  const publishedOn = new Date(pub.createdAt).toLocaleDateString("en-US", {
-    month: "short",
-    year: "numeric",
-    timeZone: "UTC",
-  });
+  const publishedOn = new Date(pub.createdAt).toLocaleDateString(
+    lang === "de" ? "de-DE" : "en-US",
+    {
+      month: "short",
+      year: "numeric",
+      timeZone: "UTC",
+    }
+  );
   return (
     <div
       className="publication-card-div"
@@ -33,7 +40,7 @@ export default function PublicationCard({ pub, theme }) {
               className="publication-creation-date subTitle"
               style={{ color: theme.secondaryText }}
             >
-              Published {publishedOn}
+              {t.published} {publishedOn}
             </p>
           </div>
           <p className="publication-description" style={{ color: theme.text }}>
@@ -46,7 +53,7 @@ export default function PublicationCard({ pub, theme }) {
               className="repo-view-btn"
               style={{ borderColor: accent, color: accent }}
             >
-              Read the paper →
+              {t.readThePaper}
             </span>
           </div>
           {/* <div className="repo-stats">

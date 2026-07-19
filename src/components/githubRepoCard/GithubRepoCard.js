@@ -2,19 +2,26 @@ import React from "react";
 import ProjectLanguages from "../../components/projectLanguages/ProjectLanguages";
 import "./GithubRepoCard.css";
 import { Fade } from "react-reveal";
+import { useLang } from "../../i18n/lang.js";
+import { getStrings } from "../../i18n/strings.js";
 
 export default function GithubRepoCard({ repo, theme }) {
+  const lang = useLang();
+  const t = getStrings(lang);
   function openRepoinNewTab(url) {
     var win = window.open(url, "_blank");
     win.focus();
   }
 
   const accent = repo.color || theme.jacketColor;
-  const createdOn = new Date(repo.createdAt).toLocaleDateString("en-US", {
-    month: "short",
-    year: "numeric",
-    timeZone: "UTC",
-  });
+  const createdOn = new Date(repo.createdAt).toLocaleDateString(
+    lang === "de" ? "de-DE" : "en-US",
+    {
+      month: "short",
+      year: "numeric",
+      timeZone: "UTC",
+    }
+  );
   return (
     <div
       className="repo-card-div"
@@ -50,7 +57,9 @@ export default function GithubRepoCard({ repo, theme }) {
             {createdOn}
           </p>
           <p className="repo-description" style={{ color: theme.text }}>
-            {repo.description}
+            {lang === "de" && repo.description_de
+              ? repo.description_de
+              : repo.description}
           </p>
           <div
             className="repo-details"
@@ -66,7 +75,7 @@ export default function GithubRepoCard({ repo, theme }) {
               className="repo-view-btn"
               style={{ borderColor: accent, color: accent }}
             >
-              View on GitHub →
+              {t.viewOnGithub}
             </span>
           </div>
 

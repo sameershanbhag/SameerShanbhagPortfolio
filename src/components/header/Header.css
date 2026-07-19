@@ -103,7 +103,7 @@
 }
 
 .header .menu-btn:checked ~ .menu {
-  max-height: 370px;
+  max-height: 440px; /* room for the language toggle item */
 }
 
 .header .menu-btn:checked ~ .menu-icon .navicon {
@@ -121,6 +121,33 @@
 .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
 .header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
   top: 0;
+}
+
+/* language toggle pill */
+
+.header .lang-toggle {
+  display: block;
+  padding: 20px 20px;
+  cursor: pointer;
+  user-select: none;
+  text-decoration: none;
+}
+
+.header .lang-toggle:hover {
+  background-color: var(--header-highlight, transparent);
+}
+
+.header .lang-toggle-option {
+  cursor: pointer;
+}
+
+.header .lang-toggle-option.active {
+  font-weight: bold;
+}
+
+.header .lang-toggle-divider {
+  padding: 0 6px;
+  opacity: 0.4;
 }
 
 /* 48em = 768px */

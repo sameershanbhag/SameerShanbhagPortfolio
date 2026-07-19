@@ -1,7 +1,10 @@
 import React from "react";
 import "./TopButton.css";
+import { useLang } from "../../i18n/lang.js";
+import { getStrings } from "../../i18n/strings.js";
 
 export default function TopButton({ theme }) {
+  const t = getStrings(useLang());
   function GoUpEvent() {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
@@ -55,7 +58,7 @@ export default function TopButton({ theme }) {
         backgroundColor: theme.text,
         border: `solid 1px ${theme.text}`,
       }}
-      title="Go up"
+      title={t.goUp}
       onMouseEnter={() => onMouseEnter(theme.text, theme.body)}
       onMouseLeave={() => onMouseLeave(theme.body, theme.text)}
     >

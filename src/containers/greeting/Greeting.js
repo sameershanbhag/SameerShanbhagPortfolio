@@ -2,12 +2,17 @@ import React from "react";
 import "./Greeting.css";
 import SocialMedia from "../../components/socialMedia/SocialMedia";
 import Button from "../../components/button/Button";
-import { greeting } from "../../portfolio";
+import { getPortfolio } from "../../portfolio.de.js";
+import { useLang } from "../../i18n/lang.js";
+import { getStrings } from "../../i18n/strings.js";
 import { Fade } from "react-reveal";
 import FeelingProud from "./FeelingProud";
 
 export default function Greeting(props) {
   const theme = props.theme;
+  const lang = useLang();
+  const t = getStrings(lang);
+  const { greeting } = getPortfolio(lang);
   return (
     <Fade bottom duration={2000} distance="40px">
       <div className="greet-main" id="greeting">
@@ -31,7 +36,7 @@ export default function Greeting(props) {
               <SocialMedia theme={theme} />
               <div className="portfolio-repo-btn-div">
                 <Button
-                  text="⭐ Star Me On Github"
+                  text={t.starMeOnGithub}
                   newTab={true}
                   href={greeting.portfolio_repository}
                   theme={theme}
