@@ -47,12 +47,26 @@ async function redis(command) {
 
 // Fallback counters for when Redis is unavailable. They live in this function
 // instance only, so they are a weak bound, not a replacement for Redis.
-const localCounts = new Map();
-function localIncr(bucket) {
-  if (localCounts.size > 5000) localCounts.clear();
-  const count = (localCounts.get(bucket) || 0) + 1;
-  localCounts.set(bucket, count);
-  return count;
+const LOCAL_MAX_BUCKETS = 5000;
+const localCounts = new Map(); // bucket -> { count, expiresAt }
+
+function localIncr(bucket, ttlSeconds) {
+  const now = Date.now();
+  const entry = localCounts.get(bucket);
+  if (entry && entry.expiresAt > now) {
+    entry.count += 1;
+    return entry.count;
+  }
+  if (!entry && localCounts.size >= LOCAL_MAX_BUCKETS) {
+    // Evict only expired windows; live per-IP limits and the daily budget stay.
+    for (const [key, value] of localCounts) {
+      if (value.expiresAt <= now) localCounts.delete(key);
+    }
+    // Still full of live counters: refuse the new bucket rather than forget one.
+    if (localCounts.size >= LOCAL_MAX_BUCKETS) return Infinity;
+  }
+  localCounts.set(bucket, { count: 1, expiresAt: now + ttlSeconds * 1000 });
+  return 1;
 }
 
 /**
@@ -62,7 +76,7 @@ function localIncr(bucket) {
 export async function rateLimit(key, limit, windowSeconds) {
   const bucket = `${key}:${Math.floor(Date.now() / 1000 / windowSeconds)}`;
   let count = await redis(["INCR", bucket]);
-  if (count === null) count = localIncr(bucket);
+  if (count === null) count = localIncr(bucket, windowSeconds);
   else if (count === 1) await redis(["EXPIRE", bucket, String(windowSeconds)]);
   return { allowed: count <= limit, remaining: Math.max(0, limit - count) };
 }
@@ -72,6 +86,6 @@ export async function globalBudget(name, dailyLimit) {
   const day = new Date().toISOString().slice(0, 10);
   const key = `global:${name}:${day}`;
   let count = await redis(["INCR", key]);
-  if (count === null) count = localIncr(key); // no Redis: per-instance cap only
+  if (count === null) count = localIncr(key, 86400); // no Redis: per-instance cap only
   return count <= dailyLimit;
 }
