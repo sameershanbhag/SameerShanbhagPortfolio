@@ -57,7 +57,7 @@ export default async function handler(req, res) {
     },
     body: JSON.stringify({
       model: "claude-haiku-4-5-20251001",
-      max_tokens: 300,
+      max_tokens: 450,
       stream: true,
       system:
         SYSTEM +
@@ -69,6 +69,10 @@ export default async function handler(req, res) {
   });
 
   if (!anthropic.ok || !anthropic.body) {
+    // Surface the upstream reason in the function logs (the body never
+    // contains the API key), so failures are diagnosable.
+    const detail = await anthropic.text().catch(() => "");
+    console.error("anthropic error:", anthropic.status, detail.slice(0, 300));
     return res.status(502).json({
       reply: "I'm having trouble thinking right now — try again in a moment, or use the Leave a message button.",
     });
